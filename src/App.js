@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Welcome from './Welcome.js';
+import Search from './Search.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      location: ''
+    }
+  }
+
+  setLocation = (location) => {
+    this.setState({ location: location })
+  }
+
   render() {
+    if (this.state.location) {
+      <div>
+        <h1 className="App-title">WEATHERLY</h1>
+        <h2>{this.state.location}</h2>
+        <Search />
+      </div>
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Weatherly</h1>
-        </header>
-        <p className="App-intro">
-          Search Bar Here
-        </p>
+        <h1 className="App-title">WEATHERLY</h1>
+        <Welcome />
+        <Search />
       </div>
     );
   }
