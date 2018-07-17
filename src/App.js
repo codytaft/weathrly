@@ -18,17 +18,19 @@ class App extends Component {
 
   render() {
     if (this.state.location) {
-      <div>
-        <h1 className="App-title">WEATHERLY</h1>
-        <h2>{this.state.location}</h2>
-        <Search />
-      </div>
+      return(
+        <div>
+          <h1 className="App-title">WEATHERLY</h1>
+          <h2>{this.state.location}</h2>
+          <Search setLocation={this.setLocation}/>
+        </div>
+      )
     }
     return (
       <div className="App">
         <h1 className="App-title">WEATHERLY</h1>
         <Welcome />
-        <Search />
+        <Search setLocation={this.setLocation}/>
       </div>
     );
   }
