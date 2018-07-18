@@ -1,11 +1,30 @@
-import WeatherData from './WeatherData.js';
+import data from './WeatherData.js';
 
-const getWeatherData = (location) => {
- return {
-   currentTemp: 75,
-   hiTemp: 85,
-   loTemp: 45,
- }
+const getCurrentWeatherData = (location) => {
+  return {
+    currentTemp: data.current_observation.temp_f,
+    currentTempIcon: data.current_observation.icon_url,
+    currentDescription: data.forecast.txt_forecast.forecastday[0].fcttext,
+  }
 }
 
-export default getWeatherData;
+// const getHourlyWeatherData = (location) => {
+//   return {
+//     currentTemp: data.current_observation.temp_f,
+//     currentTempIcon: data.current_observation.icon_url,
+//     currentDescription: data.forecast.txt_forecast[0].fcttext,
+//   }
+// }
+
+// const getdailyWeatherData = (location) => {
+//   return {
+//     currentTemp: data.current_observation.temp_f,
+//     currentTempIcon: data.current_observation.icon_url,
+//     currentDescription: data.forecast.txt_forecast[0].fcttext,
+//   }
+// }
+
+// hiTemp: 85,
+// loTemp: 45,
+export default getCurrentWeatherData;
+// export default getCurrentWeatherData;

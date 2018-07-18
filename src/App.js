@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Welcome from './Welcome.js';
 import Search from './Search.js';
-import getWeatherData from './weather.js';
+import getCurrentWeatherData from './weather.js';
 
 class App extends Component {
   constructor() {
@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       location: '',
       currentTemp: 0,
+      currentTempIcon: null,
+      currentDescription: '',
       hiTemp: 0,
       loTemp: 0,
     }
@@ -18,7 +20,7 @@ class App extends Component {
 
   setLocation = (location) => {
     this.setState({ location: location })
-    let locationWeather = getWeatherData(location)
+    let locationWeather = getCurrentWeatherData(location)
     this.setState(locationWeather)
   }
 
@@ -30,6 +32,8 @@ class App extends Component {
           <h2>{this.state.location}</h2>
           <Search setLocation={this.setLocation}/>
           <p>{this.state.currentTemp}</p>
+          <p>{this.state.currentTempIcon}</p>
+          <p>{this.state.currentDescription}</p>
         </div>
       )
     }

@@ -1,5 +1,15 @@
+html {
+  height: 100%;
+}
+
 body {
+  background: linear-gradient(#005b97, #0075be, #1e9cd7, #c69c6d 90%);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  height: 100%;
 }
+
+
