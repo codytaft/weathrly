@@ -4,6 +4,7 @@ import './App.css';
 import Welcome from './Welcome.js';
 import Search from './Search.js';
 import getCurrentWeatherData from './weather.js';
+import apiKey from './apiKey.js';
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,20 @@ class App extends Component {
       loTemp: 0,
     }
   }
+
+  // componentDidMount() {
+  //   fetch('http://api.wunderground.com/api/${apiKey}/conditions/q/CA/San_Francisco.json
+')
+  //     .then(response => response.json())
+  //     .then(questions => {
+  //       this.setState({
+  //         triviaQuestions: questions.results
+  //       })
+  //     })
+  //     .catch(error => {
+  //       throw new Error(error);
+  //     });
+  // }
 
   setLocation = (location) => {
     this.setState({ location: location })
