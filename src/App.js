@@ -5,23 +5,22 @@ import Welcome from './Welcome.js';
 import Search from './Search.js';
 import getCurrentWeatherData from './weather.js';
 import apiKey from './apiKey.js';
+import data from './WeatherData.js';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      location: '',
-      currentTemp: 0,
-      currentTempIcon: null,
-      currentDescription: '',
-      hiTemp: 0,
-      loTemp: 0,
+      locationData: [],
+      locationInput: '',
     }
   }
 
+  // New weather class to store fetched weather in state
+
   // componentDidMount() {
-  //   fetch('http://api.wunderground.com/api/${apiKey}/conditions/q/CA/San_Francisco.json
-')
+  //   fetch('http://api.wunderground.com/api/${apiKey}/conditions/q/CA/San_Francisco.json')
   //     .then(response => response.json())
   //     .then(questions => {
   //       this.setState({
@@ -37,6 +36,20 @@ class App extends Component {
     this.setState({ location: location })
     let locationWeather = getCurrentWeatherData(location)
     this.setState(locationWeather)
+  }
+
+  getCurrentWeatherData = (location) => {
+    return {
+      currentTemp: data.current_observation.temp_f,
+      currentTempIcon: data.current_observation.icon_url,
+      currentDescription: data.forecast.txt_forecast.forecastday[0].fcttext,
+    }
+  }
+
+  getHourlyWeatherData = (location) => {
+    return {
+
+    }
   }
 
   render() {
@@ -76,3 +89,5 @@ export default App;
 // Import 7Hour
 // Import 10Day
 // Maybe something at the bottom...
+
+// Put in prop.types for all components

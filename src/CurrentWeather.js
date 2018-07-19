@@ -1,3 +1,7 @@
+      // currentTemp: 0,
+      // currentTempIcon: null,
+      // currentDescription: '',
+
 // Will have current conditions
 // Need HTML for displaying the date
 // Block for current temperature
