@@ -1,6 +1,14 @@
-import data from './WeatherData.js';
+// import data from './WeatherData.js';
 
-const getCurrentWeatherData = (location) => {
+const getAllWeatherData = (data) => {
+  return [
+    { currentWeather: getCurrentWeatherData(data) },
+    { hourlyWeather: getHourlyWeatherData(data) },
+    { dailyWeather: getDailyWeatherData(data) }
+  ]
+}
+
+const getCurrentWeatherData = (data) => {
   return {
     currentTemp: data.current_observation.temp_f,
     currentTempIcon: data.current_observation.icon_url,
@@ -8,21 +16,19 @@ const getCurrentWeatherData = (location) => {
   }
 }
 
-// const getHourlyWeatherData = (location) => {
-//   return {
-//     currentTemp: data.current_observation.temp_f,
-//     currentTempIcon: data.current_observation.icon_url,
-//     currentDescription: data.forecast.txt_forecast[0].fcttext,
-//   }
-// }
+const getHourlyWeatherData = (data) => {
+  return []
+    // currentTemp: data.current_observation.temp_f,
+    // currentTempIcon: data.current_observation.icon_url,
+    // currentDescription: data.forecast.txt_forecast[0].fcttext,
+}
 
-// const getdailyWeatherData = (location) => {
-//   return {
-//     currentTemp: data.current_observation.temp_f,
-//     currentTempIcon: data.current_observation.icon_url,
-//     currentDescription: data.forecast.txt_forecast[0].fcttext,
-//   }
-// }
+const getDailyWeatherData = (data) => {
+  return []
+    // currentTemp: data.current_observation.temp_f,
+    // currentTempIcon: data.current_observation.icon_url,
+    // currentDescription: data.forecast.txt_forecast[0].fcttext,
+}
 
 // hiTemp: 85,
 // loTemp: 45,

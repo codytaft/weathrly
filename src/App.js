@@ -13,7 +13,7 @@ class App extends Component {
     super();
     this.state = {
       locationData: [],
-      locationInput: '',
+      searchedLocation: '',
     }
   }
 
@@ -33,35 +33,19 @@ class App extends Component {
   // }
 
   setLocation = (location) => {
-    this.setState({ location: location })
-    let locationWeather = getCurrentWeatherData(location)
-    this.setState(locationWeather)
-  }
-
-  getCurrentWeatherData = (location) => {
-    return {
-      currentTemp: data.current_observation.temp_f,
-      currentTempIcon: data.current_observation.icon_url,
-      currentDescription: data.forecast.txt_forecast.forecastday[0].fcttext,
-    }
-  }
-
-  getHourlyWeatherData = (location) => {
-    return {
-
-    }
+    this.setState({ searchedLocation: location })
+    let locationWeather = getAllWeatherData(data);
+    console.log(locationWeather)
+    this.setState({ locationData: locationWeather })
   }
 
   render() {
-    if (this.state.location) {
+    if (this.state.searchedLocation) {
       return(
         <div>
           <h1 className="App-title">WEATHERLY</h1>
-          <h2>{this.state.location}</h2>
+          <h2>{this.state.searchedLocation}</h2>
           <Search setLocation={this.setLocation}/>
-          <p>{this.state.currentTemp}</p>
-          <p>{this.state.currentTempIcon}</p>
-          <p>{this.state.currentDescription}</p>
         </div>
       )
     }
