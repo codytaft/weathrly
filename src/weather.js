@@ -1,11 +1,10 @@
-// import data from './WeatherData.js';
 
 const getAllWeatherData = (data) => {
-  return [
-    { currentWeather: getCurrentWeatherData(data) },
-    { hourlyWeather: getHourlyWeatherData(data) },
-    { dailyWeather: getDailyWeatherData(data) }
-  ]
+  return { 
+    currentWeather: getCurrentWeatherData(data),
+    hourlyWeather: getHourlyWeatherData(data),
+    dailyWeather: getDailyWeatherData(data)
+  }
 }
 
 const getCurrentWeatherData = (data) => {
@@ -24,13 +23,14 @@ const getHourlyWeatherData = (data) => {
 }
 
 const getDailyWeatherData = (data) => {
-  return []
-    // currentTemp: data.current_observation.temp_f,
-    // currentTempIcon: data.current_observation.icon_url,
-    // currentDescription: data.forecast.txt_forecast[0].fcttext,
+  return data.forecast.simpleforecast.forecastday.map( (day, i) => {
+    return {
+      day: data.forecast.simpleforecast.forecastday[i].date.pretty,
+      icon: data.forecast.simpleforecast.forecastday[i].icon_url,
+      high: data.forecast.simpleforecast.forecastday[i].high.fahrenheit,
+      low: data.forecast.simpleforecast.forecastday[i].low.fahrenheit
+    }
+  })
 }
 
-// hiTemp: 85,
-// loTemp: 45,
-export default getCurrentWeatherData;
-// export default getCurrentWeatherData;
+export default getAllWeatherData;

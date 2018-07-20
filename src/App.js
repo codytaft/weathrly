@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Welcome from './Welcome.js';
 import Search from './Search.js';
-import getCurrentWeatherData from './weather.js';
+import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
 import data from './WeatherData.js';
 
@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      locationData: [],
+      locationData: {},
       searchedLocation: '',
     }
   }
@@ -35,7 +35,6 @@ class App extends Component {
   setLocation = (location) => {
     this.setState({ searchedLocation: location })
     let locationWeather = getAllWeatherData(data);
-    console.log(locationWeather)
     this.setState({ locationData: locationWeather })
   }
 
@@ -46,6 +45,7 @@ class App extends Component {
           <h1 className="App-title">WEATHERLY</h1>
           <h2>{this.state.searchedLocation}</h2>
           <Search setLocation={this.setLocation}/>
+          <p>{this.state.locationData.dailyWeather[0].day}</p>
         </div>
       )
     }
