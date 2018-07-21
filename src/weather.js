@@ -16,7 +16,7 @@ const getCurrentWeatherData = (data) => {
 }
 
 const getHourlyWeatherData = (data) => {
-  return data.hourly_forecast.map( (hour, i) => {
+  return data.hourly_forecast.slice(0, 7).map( (hour, i) => {
     return {
       hour: data.hourly_forecast[i].FCTTIME.hour,
       icon: data.hourly_forecast[i].icon_url,
