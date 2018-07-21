@@ -5,7 +5,7 @@ import Welcome from './Welcome.js';
 import Search from './Search.js';
 import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
-import data from './WeatherData.js';
+// import data from './WeatherData.js';
 import CurrentWeather from './CurrentWeather.js';
 
 
@@ -15,45 +15,46 @@ class App extends Component {
     this.state = {
       locationData: {},
       searchedLocation: '',
+      dataLoaded: false
     }
   }
 
   // New weather class to store fetched weather in state
 
-  // componentDidMount() {
-  //   fetch('http://api.wunderground.com/api/${apiKey}/conditions/q/CA/San_Francisco.json')
-  //     .then(response => response.json())
-  //     .then(questions => {
-  //       this.setState({
-  //         triviaQuestions: questions.results
-  //       })
-  //     })
-  //     .catch(error => {
-  //       throw new Error(error);
-  //     });
-  // }
+  fetchAPI() {
+    fetch(`http://api.wunderground.com/api/${apiKey}/conditions/hourly/forecast10day/q/CA/San_Francisco.json`)
+      .then( response => response.json())
+      .then( (data) => {
+        this.setState({
+          locationData: getAllWeatherData(data),
+          dataLoaded: true
+        })
+        console.log(this.state.locationData)
+      })
+      
+      // .then( (data) => {
+      //   console.log(data)
+      // })
+      .catch(error => {
+        throw new Error(error);
+      });
+  }
 
   setLocation = (location) => {
     this.setState({ searchedLocation: location });
-    let locationWeather = getAllWeatherData(data);
-    this.setState({ locationData: locationWeather });
+    this.fetchAPI();
+    // let locationWeather = getAllWeatherData(data);
+    // this.setState({ locationData: locationWeather });
   }
 
   render() {
-    if (this.state.searchedLocation) {
+    if (this.state.searchedLocation && this.state.dataLoaded) {
       return(
         <div className="searchResultPage">
           <h1 className="App-title">WEATHERLY</h1>
           <h2>{this.state.searchedLocation}</h2>
           <Search setLocation={this.setLocation}/>
-          <CurrentWeather />
-          <p>{this.state.locationData.dailyWeather[0].day}</p>
-          <img src={this.state.locationData.dailyWeather[0].icon}/>
-          <p>{this.state.locationData.dailyWeather[0].high}</p>
-          <p>{this.state.locationData.dailyWeather[0].low}</p>
-          <p>{this.state.locationData.hourlyWeather[0].hour}</p>
-          <img src={this.state.locationData.hourlyWeather[0].icon}/>
-          <p>{this.state.locationData.hourlyWeather[0].temp}</p>
+          <CurrentWeather locationData={this.state.locationData}/>
         </div>
       )
     }
