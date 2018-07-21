@@ -20,6 +20,13 @@ describe('App', () => {
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
-  })
+  });
+
+  it('should have a default state with an empty object of locationData and empty string of searchedLocation', () => {
+    expect(wrapper.state()).toEqual({locationData: {}, 
+                                   searchedLocation: ''})
+  });
+
+  
 })
 

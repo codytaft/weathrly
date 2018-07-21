@@ -16,10 +16,13 @@ const getCurrentWeatherData = (data) => {
 }
 
 const getHourlyWeatherData = (data) => {
-  return []
-    // currentTemp: data.current_observation.temp_f,
-    // currentTempIcon: data.current_observation.icon_url,
-    // currentDescription: data.forecast.txt_forecast[0].fcttext,
+  return data.hourly_forecast.map( (hour, i) => {
+    return {
+      hour: data.hourly_forecast[i].FCTTIME.hour,
+      icon: data.hourly_forecast[i].icon_url,
+      temp: data.hourly_forecast[i].temp.english,
+    }
+  })
 }
 
 const getDailyWeatherData = (data) => {
