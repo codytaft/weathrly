@@ -6,6 +6,7 @@ import Search from './Search.js';
 import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
 import data from './WeatherData.js';
+import CurrentWeather from './CurrentWeather.js';
 
 
 class App extends Component {
@@ -33,19 +34,26 @@ class App extends Component {
   // }
 
   setLocation = (location) => {
-    this.setState({ searchedLocation: location })
+    this.setState({ searchedLocation: location });
     let locationWeather = getAllWeatherData(data);
-    this.setState({ locationData: locationWeather })
+    this.setState({ locationData: locationWeather });
   }
 
   render() {
     if (this.state.searchedLocation) {
       return(
-        <div>
+        <div className="searchResultPage">
           <h1 className="App-title">WEATHERLY</h1>
           <h2>{this.state.searchedLocation}</h2>
           <Search setLocation={this.setLocation}/>
+          <CurrentWeather />
           <p>{this.state.locationData.dailyWeather[0].day}</p>
+          <img src={this.state.locationData.dailyWeather[0].icon}/>
+          <p>{this.state.locationData.dailyWeather[0].high}</p>
+          <p>{this.state.locationData.dailyWeather[0].low}</p>
+          <p>{this.state.locationData.hourlyWeather[0].hour}</p>
+          <img src={this.state.locationData.hourlyWeather[0].icon}/>
+          <p>{this.state.locationData.hourlyWeather[0].temp}</p>
         </div>
       )
     }

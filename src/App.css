@@ -16,10 +16,15 @@
 
 .App-title {
   font-size: 1.5em;
+  text-align: center;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.searchResultPage {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

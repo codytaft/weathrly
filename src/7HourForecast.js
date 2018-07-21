@@ -1,14 +1,27 @@
-// sevenHourForecast: [ {
-//   hour: '',     // forecast.hourly_forecast.FCTTIME.hour
-//   icon: '',     // forecast.hourly_forecast.icon_url
-//   temp: 0,      // forecast.hourly_forecast.temp.english
-// }],
+import React, { Component } from 'react';
+
+import Card from './Card.js';
+
+class hourlyForecast extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentHour: 0,
+      currentIcon: '',
+      projectedTemp: ''
+    }
+  }
+  
+  makeCard = () => {
+    
+  }
+}
+
+App.state.locationData.hourly.forEach(() => {
 
 
 
-// import component
-// import card
-// create class and extend component
+  
 // create cards that corrolate to the cities info
 
 
