@@ -29,7 +29,6 @@ class App extends Component {
           locationData: getAllWeatherData(data),
           dataLoaded: true
         })
-        console.log(this.state.locationData)
       })
       
       // .then( (data) => {
