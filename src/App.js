@@ -21,8 +21,8 @@ class App extends Component {
 
   // New weather class to store fetched weather in state
 
-  fetchAPI() {
-    fetch(`http://api.wunderground.com/api/${apiKey}/conditions/hourly/forecast10day/q/CA/San_Francisco.json`)
+  fetchAPI(city, state) {
+    fetch(`http://api.wunderground.com/api/${apiKey}/conditions/hourly/forecast10day/q/${state}/${city}.json`)
       .then( response => response.json())
       .then( (data) => {
         this.setState({
@@ -39,9 +39,10 @@ class App extends Component {
       });
   }
 
-  setLocation = (location) => {
-    this.setState({ searchedLocation: location });
-    this.fetchAPI();
+  setLocation = (city, state) => {
+    let noSpaceLocation = city.replace(/ /, '_')
+    this.setState({ searchedLocation: city.toUpperCase() });
+    this.fetchAPI(noSpaceLocation, state);
     // let locationWeather = getAllWeatherData(data);
     // this.setState({ locationData: locationWeather });
   }
