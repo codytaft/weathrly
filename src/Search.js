@@ -75,7 +75,7 @@ class Search extends Component {
           <option value="WI">WI</option>
           <option value="WY">WY</option>
         </select>
-        <button onClick={() => this.props.setLocation(this.state.inputVal, this.state.stateAbbrev)}>SEARCH</button>
+        <button onClick={() => this.props.setLocation(this.state.inputVal, this.state.stateAbbrev)}>SEARCH</button> 
       </div>
     )
   }
