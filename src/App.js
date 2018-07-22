@@ -58,7 +58,7 @@ class App extends Component {
       return(
         <div className="Results-page">
           <button className="Home-button" onClick={this.returnToWelcomePage}></button>
-          <h2>{this.state.searchedLocation}</h2>
+          <h2>{this.state.locationData.currentWeather.currentLocation}</h2>
           <Search setLocation={this.setLocation}/>
           <CurrentWeather locationData={this.state.locationData}/>
         </div>
