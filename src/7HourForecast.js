@@ -2,29 +2,12 @@ import React, { Component } from 'react';
 
 import Card from './Card.js';
 
-class hourlyForecast extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentHour: 0,
-      currentIcon: '',
-      projectedTemp: ''
-    }
-  }
-  
-  makeCard = () => {
-    
-  }
+const HourlyForecast = (props) => {
+  return (
+      props.locationData.hourlyWeather.map( (hour, i) => {
+        return <Card currentData={hour} key={i} />;
+      })
+  )
 }
 
-App.state.locationData.hourly.forEach(() => {
-
-
-
-  
-// create cards that corrolate to the cities info
-
-
-
-
-// possibly more hours???
+export default HourlyForecast;
