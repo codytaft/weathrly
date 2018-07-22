@@ -47,11 +47,16 @@ class App extends Component {
     // this.setState({ locationData: locationWeather });
   }
 
+  returnToWelcomePage = () => {
+    this.setState({locationData: {}});
+    window.location.reload()
+  }
+
   render() {
     if (this.state.searchedLocation && this.state.dataLoaded) {
       return(
-        <div className="searchResultPage">
-          <h1 className="App-title">WEATHERLY</h1>
+        <div className="Results-page">
+          <button className="Home-button" onClick={this.returnToWelcomePage}>W</button>
           <h2>{this.state.searchedLocation}</h2>
           <Search setLocation={this.setLocation}/>
           <CurrentWeather locationData={this.state.locationData}/>
@@ -59,8 +64,7 @@ class App extends Component {
       )
     }
     return (
-      <div className="App">
-        <h1 className="App-title">WEATHERLY</h1>
+      <div>
         <Welcome />
         <Search setLocation={this.setLocation} />
       </div>
@@ -69,18 +73,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Import welcome.js
-// Will display welcome page and search bar
-
-// If city or location entered ->>
-
-// Will display name of SEARCHED city
-// Will display Home logo link
-// Will display search bar
-// Import Current conditions
-// Import 7Hour
-// Import 10Day
-// Maybe something at the bottom...
-
-// Put in prop.types for all components
