@@ -64,28 +64,9 @@ class App extends Component {
       )
     }
     return (
-      <div className="Welcome-page">
-        <h1 className="App-title">WEATHERLY</h1>
         <Welcome />
-        <Search setLocation={this.setLocation} />
-      </div>
     );
   }
 }
 
 export default App;
-
-// Import welcome.js
-// Will display welcome page and search bar
-
-// If city or location entered ->>
-
-// Will display name of SEARCHED city
-// Will display Home logo link
-// Will display search bar
-// Import Current conditions
-// Import 7Hour
-// Import 10Day
-// Maybe something at the bottom...
-
-// Put in prop.types for all components
