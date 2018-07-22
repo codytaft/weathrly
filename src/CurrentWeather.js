@@ -5,56 +5,20 @@ import getAllWeatherData from './weather.js'
 class CurrentWeather extends Component {
   constructor() {
     super();
-    // this.state = {
-    //   currentDay: '',
-    //   currentTemp: '',
-    //   currentTempIcon: '',
-    //   currentDescription: '',
-    //   currentHi: '',
-    //   currentLo: ''
-    // }
   }
-
-  // setCurrentTemps = () => {
-  //   let date = getAllWeatherData.dailyWeather[0].day;
-  //   this.setState({ currentDay: date});
-
-  //   let temp = getAllWeatherData.currentWeather.currentTemp;
-  //   this.setState({ currentTemp: temp });
-
-  //   let icon = getAllWeatherData.currentWeather.currentTempIcon;
-  //   this.setState({ currentTempIcon: icon});
-
-  //   let desciption = getAllWeatherData.currentWeather.currentDescription;
-  //   this.setState({ currentDescription: desciption});
-
-  //   let hi = getAllWeatherData.dailyWeather[0].high;
-  //   this.setState({ currentDescription: hi});
-
-  //   let lo = getAllWeatherData.dailyWeather[0].low;
-  //   this.setState({ currentDescription: lo});
-  // }
 
   render() {
     return(
-      <div className="current-weather-section">
-        <header>
-          <p></p>
-        </header>
-        <p className="current-weather">{this.props.locationData.currentWeather.currentTemp}</p>
-      </div>
+      <section className="current-weather">
+        <img src={this.props.locationData.currentWeather.currentTempIcon}/>
+        <p className="card_temp"><span className="card_temp--lo"></span></p>
+        <p className="current-weather">{this.props.locationData.currentWeather.currentTemp}&#8457;</p>
+        <p>{this.props.locationData.currentWeather.currentDescription}</p>
+        <p>TODAY</p>
+        <p>{this.props.locationData.currentWeather.currentDay} {this.props.locationData.currentWeather.currentHour}:00</p>
+      </section>
     ) 
   }
 }
 
 export default CurrentWeather;
-
-
-
-// Will have current conditions
-// Need HTML for displaying the date
-// Block for current temperature
-// Blocks for hi-low temp
-// HTML for summary/description
-// Image representing the day
-// Export
