@@ -21,7 +21,6 @@ class Search extends Component {
     return(
       <div>
         <input type="text" placeholder="Enter City or Zip Code" onChange={this.updateVal}/>
-        <button onClick={() => this.props.setLocation(this.state.inputVal, this.state.stateAbbrev)}>SEARCH</button>
         <select name="states" id="state-list" onChange={this.selectState}>
           <option value="AL">AL</option>
           <option value="AK">AK</option>
@@ -74,6 +73,7 @@ class Search extends Component {
           <option value="WI">WI</option>
           <option value="WY">WY</option>
         </select>
+        <button onClick={() => this.props.setLocation(this.state.inputVal, this.state.stateAbbrev)}>SEARCH</button>
       </div>
     )
   }
