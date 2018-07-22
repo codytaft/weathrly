@@ -21,17 +21,18 @@ const getCurrentWeatherData = (data) => {
 }
 
 const getHourlyWeatherData = (data) => {
-  return data.hourly_forecast.slice(1, 8).map( (hour, i) => {
+  let hourlyArray = data.hourly_forecast.map( (hour, i) => {
     return {
       hour: data.hourly_forecast[i].FCTTIME.hour,
       icon: data.hourly_forecast[i].icon_url,
       temp: data.hourly_forecast[i].temp.english,
     }
   })
+  return hourlyArray.slice(1, 8);
 }
 
 const getDailyWeatherData = (data) => {
-  return data.forecast.simpleforecast.forecastday.slice(1, 10).map( (day, i) => {
+  let dailyArray = data.forecast.simpleforecast.forecastday.map( (day, i) => {
     return {
       day: data.forecast.simpleforecast.forecastday[i].date.weekday,
       icon: data.forecast.simpleforecast.forecastday[i].icon_url,
@@ -39,6 +40,7 @@ const getDailyWeatherData = (data) => {
       low: data.forecast.simpleforecast.forecastday[i].low.fahrenheit
     }
   })
+  return dailyArray.slice(1, 10)
 }
 
 export default getAllWeatherData;
