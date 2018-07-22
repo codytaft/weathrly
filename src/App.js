@@ -47,11 +47,16 @@ class App extends Component {
     // this.setState({ locationData: locationWeather });
   }
 
+  returnToWelcomePage = () => {
+    this.setState({locationData: {}});
+    window.location.reload()
+  }
+
   render() {
     if (this.state.searchedLocation && this.state.dataLoaded) {
       return(
-        <div className="searchResultPage">
-          <h1 className="App-title">WEATHERLY</h1>
+        <div className="Results-page">
+          <button className="Home-button" onClick={this.returnToWelcomePage}>W</button>
           <h2>{this.state.searchedLocation}</h2>
           <Search setLocation={this.setLocation}/>
           <CurrentWeather locationData={this.state.locationData}/>
@@ -59,7 +64,7 @@ class App extends Component {
       )
     }
     return (
-      <div className="App">
+      <div className="Welcome-page">
         <h1 className="App-title">WEATHERLY</h1>
         <Welcome />
         <Search setLocation={this.setLocation} />
