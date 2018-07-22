@@ -57,15 +57,15 @@ class App extends Component {
     if (this.state.searchedLocation && this.state.dataLoaded) {
       return(
         <div className="Results-page">
-          <button className="Home-button" onClick={this.returnToWelcomePage}>W</button>
-          <h2>{this.state.searchedLocation}</h2>
+          <button className="Home-button" onClick={this.returnToWelcomePage}></button>
+          <h2>{this.state.locationData.currentWeather.currentLocation}</h2>
           <Search setLocation={this.setLocation}/>
           <CurrentWeather locationData={this.state.locationData}/>
         </div>
       )
     }
     return (
-      <div>
+      <div className="Welcome-page">
         <Welcome />
         <Search setLocation={this.setLocation} />
       </div>

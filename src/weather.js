@@ -9,6 +9,7 @@ const getAllWeatherData = (data) => {
 
 const getCurrentWeatherData = (data) => {
   return {
+    currentLocation: data.current_observation.display_location.full,
     currentTemp: data.current_observation.temp_f,
     currentTempIcon: data.current_observation.icon_url,
     currentDescription: data.forecast.txt_forecast.forecastday[0].fcttext,
