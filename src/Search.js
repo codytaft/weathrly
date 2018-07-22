@@ -22,7 +22,7 @@ class Search extends Component {
   render() {
     return(
       <div>
-        <input type="text" placeholder="Enter City or Zip Code" onChange={this.updateVal}/>
+        <input type="text" placeholder="Enter City/State or Zip Code" onChange={this.updateVal}/>
         <select name="states" id="state-list" onChange={this.selectState}>
           <option value="AL">AL</option>
           <option value="AK">AK</option>

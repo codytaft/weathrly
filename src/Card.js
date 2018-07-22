@@ -1,9 +1,9 @@
 const getWeatherCard = (icon, time, temp, loTemp = '') => {
   return (
       <section>
-        <img className="card_icon" src={icon}/>
-        <p className="card_temp">{temp}<span className="card_temp--lo">{loTemp}</span></p>
-        <p className="card_time">{time}</p>
+        <img className="card__icon" src={icon}/>
+        <p className="card__temp">{temp}<span className="card_temp--lo">{loTemp}</span></p>
+        <p className="card__time">{time}</p>
       </section>  
   )
 }
