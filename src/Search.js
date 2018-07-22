@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Welcome from './Welcome.js';
+
 class Search extends Component {
   constructor() {
     super();

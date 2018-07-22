@@ -64,7 +64,10 @@ class App extends Component {
       )
     }
     return (
+      <div>
         <Welcome />
+        <Search setLocation={this.setLocation} />
+      </div>
     );
   }
 }
