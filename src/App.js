@@ -8,6 +8,8 @@ import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
 // import data from './WeatherData.js';
 import CurrentWeather from './CurrentWeather.js';
+import HourlyForecast from './7HourForecast.js';
+import DailyForecast from './10DayForecast.js';
 
 
 class App extends Component {
@@ -61,6 +63,8 @@ class App extends Component {
           <h2>{this.state.locationData.currentWeather.currentLocation}</h2>
           <Search setLocation={this.setLocation}/>
           <CurrentWeather locationData={this.state.locationData}/>
+          <HourlyForecast locationData={this.state.locationData}/>
+          <DailyForecast locationData={this.state.locationData}/>
         </div>
       )
     }

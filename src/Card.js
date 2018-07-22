@@ -1,31 +1,19 @@
-const getWeatherCard = (icon, time, temp, loTemp = '') => {
-  return (
+import React, { Component } from 'react';
+
+class Card extends Component {
+  
+  render() {
+    console.log(this.props.currentData)
+    let time =  this.props.currentData.day || (this.props.currentData.hour + ':00');
+    let temp = this.props.currentData.temp || this.props.currentData.high;
+    return (
       <section>
-        <img className="card__icon" src={icon}/>
-        <p className="card__temp">{temp}<span className="card_temp--lo">{loTemp}</span></p>
+        <img className="card__icon" src={this.props.currentData.icon}/>
+        <p className="card__temp">{temp}<span className="card_temp--lo">{this.props.currentData.low}</span></p>
         <p className="card__time">{time}</p>
       </section>  
-  )
+    )
+  }
 }
-
-// import App from './App.js' 
-
-// import React, { Component } from 'react';
-
-// class Card extends Component {
-//   constructor() {
-//     super();
-//   }
-
-//   render() {
-//     return(
-//       <section>
-//         <img className="card_icon" src={}/>
-//         <p className="card_temp"><span className="card_temp--lo"></span></p>
-//         <p className="card_time"></p>
-//       </section>  
-//     )
-//   }
-// }
 
 export default Card;
