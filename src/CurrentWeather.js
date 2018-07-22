@@ -11,7 +11,7 @@ class CurrentWeather extends Component {
     return(
       <section className="current-weather">
         <img src={this.props.locationData.currentWeather.currentTempIcon}/>
-        <p className="card_temp"><span className="card_temp--lo"></span></p>
+        <p className="card_temp">{this.props.locationData.currentWeather.currentHi}<span className="card_temp--lo">{this.props.locationData.currentWeather.currentLo}</span></p>
         <p className="current-weather">{this.props.locationData.currentWeather.currentTemp}&#8457;</p>
         <p>{this.props.locationData.currentWeather.currentDescription}</p>
         <p>TODAY</p>
