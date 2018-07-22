@@ -38,13 +38,40 @@ body {
     100%{background-position:0% 82%}
 }
 
-
 .App-title {
   margin: 0;
   padding-top: 10%;
   font-size: 3em;
   font-weight: 100;
   text-align: center;
+}
+
+.Search__input {
+  height: 3.5rem;
+  opacity: .8;
+  border: none;
+  border-radius: 8px;
+  padding-left: .5rem;
+}
+
+.Search__input::placeholder {
+  color: #b5bbbf;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.Search__button {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: url(./icons/search.svg);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  border: none;
+}
+
+.Search__button:hover {
+  cursor: pointer;
 }
 
 .Welcome__search {
