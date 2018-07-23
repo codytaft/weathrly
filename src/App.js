@@ -62,8 +62,12 @@ class App extends Component {
           <h2>{this.state.locationData.currentWeather.currentLocation}</h2>
           <Search setLocation={this.setLocation}/>
           <CurrentWeather locationData={this.state.locationData}/>
-          <HourlyForecast locationData={this.state.locationData}/>
-          <DailyForecast locationData={this.state.locationData}/>
+          <div className="Hourly-cards">
+            <HourlyForecast locationData={this.state.locationData}/>
+          </div>
+          <div className="Daily-cards">
+            <DailyForecast locationData={this.state.locationData}/>
+          </div>
         </div>
       )
     }

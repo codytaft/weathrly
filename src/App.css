@@ -137,9 +137,48 @@ h2 {
   font-weight: 200;
 }
 
+.card_temp {
+  font-size: 2rem;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+}
+
+.card_time {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.card_icon {
+  margin: 0;
+}
+
+.card_temp--lo {
+  color: #98c3e0;
+}
+
 .card__temp--lo {
   margin-left: .5rem;
   color: #98c3e0;
+}
+
+.Hourly-cards {
+  display: flex
+}
+
+.Daily-cards {
+  display: flex;
+}
+
+.weather__card {
+  margin: 1.5rem 1.5rem 0 1.5rem;
+  text-align: center;
+  height: 9rem;
+}
+
+.card__time {
+  margin: 0
 }
 
 .Results__current-weather--temp {
@@ -175,6 +214,11 @@ h2 {
   font-size: 2rem;
   font-weight: 300;
 }
+
+
+
+
+
 
 
 /*
