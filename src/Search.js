@@ -14,10 +14,10 @@ class Search extends Component {
 
   render() {
     return(
-      <div className="Search">
+      <form className="Search">
         <input className="Search__input" type="text" placeholder="ENTER CITY/STATE OR ZIP CODE" onChange={this.updateVal}/>
         <button className="Search__button" onClick={() => this.props.setLocation(this.state.inputVal)}></button> 
-      </div>
+      </form>
     )
   }
 }
