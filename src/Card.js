@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Card extends Component {
   
   render() {
-    console.log(this.props.currentData)
     let time =  this.props.currentData.day || (this.props.currentData.hour + ':00');
     let temp = this.props.currentData.temp || this.props.currentData.high;
     return (
