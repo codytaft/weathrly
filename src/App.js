@@ -58,12 +58,20 @@ class App extends Component {
     if (this.state.searchedLocation && this.state.dataLoaded) {
       return(
         <div className="Results-page">
-          <button className="Home-button" onClick={this.returnToWelcomePage}></button>
-          <h2>{this.state.locationData.currentWeather.currentLocation}</h2>
-          <Search setLocation={this.setLocation}/>
+          <header className="Home-search-head">
+            <button className="Home-button" onClick={this.returnToWelcomePage}></button>
+            <Search setLocation={this.setLocation}/>
+          </header>
           <CurrentWeather locationData={this.state.locationData}/>
-          <HourlyForecast locationData={this.state.locationData}/>
-          <DailyForecast locationData={this.state.locationData}/>
+          <div className="Hourly-cards-section">
+            <h3 className="city__name">{this.state.locationData.currentWeather.currentLocation}</h3>
+            <div className="Hourly_cards">
+              <HourlyForecast locationData={this.state.locationData}/>
+            </div>
+          </div>
+          <div className="Daily-cards">
+            <DailyForecast locationData={this.state.locationData}/>
+          </div>
         </div>
       )
     }
