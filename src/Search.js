@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import Cities from './cities.js';
+import Trie from '@laurakwhit/complete-me';
+
+const citiesTrie = new Trie();
+citiesTrie.populate(Cities.data);
+
 
 class Search extends Component {
   constructor() {
@@ -9,7 +15,14 @@ class Search extends Component {
   }
 
   updateVal = (e) => {
-    this.setState({ inputVal: e.target.value })
+    this.setState({ inputVal: e.target.value });
+    this.getSuggestions(e.target.value);
+  }
+
+  getSuggestions = (prefix) => {
+    console.log(prefix)
+    const suggestions = citiesTrie.suggest(prefix);
+    console.log(suggestions);
   }
 
   render() {
