@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './normalize.css';
 import './App.css';
 import Welcome from './Welcome.js';
 import Search from './Search.js';
 import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
-// import data from './WeatherData.js';
 import CurrentWeather from './CurrentWeather.js';
 import HourlyForecast from './7HourForecast.js';
 import DailyForecast from './10DayForecast.js';
@@ -22,8 +20,6 @@ class App extends Component {
     }
   }
 
-  // New weather class to store fetched weather in state
-
   fetchAPI(city, state) {
     fetch(`http://api.wunderground.com/api/${apiKey}/conditions/hourly/forecast10day/q/${state}/${city}.json`)
       .then( response => response.json())
@@ -33,26 +29,29 @@ class App extends Component {
           dataLoaded: true
         })
       })
-      
-      // .then( (data) => {
-      //   console.log(data)
-      // })
       .catch(error => {
         throw new Error(error);
       });
   }
 
-  setLocation = (city, state) => {
-    let noSpaceLocation = city.replace(/ /, '_')
-    this.setState({ searchedLocation: city.toUpperCase() });
-    this.fetchAPI(noSpaceLocation, state);
-    // let locationWeather = getAllWeatherData(data);
-    // this.setState({ locationData: locationWeather });
+  setLocation = (location) => {
+    const [city, state] = location.split(', ');
+    let noSpaceCity = city.replace(/ /, '_')
+    this.setState({ searchedLocation: location });
+    this.fetchAPI(noSpaceCity, state);
+    localStorage.setItem('savedLocation', location);
   }
 
   returnToWelcomePage = () => {
-    this.setState({locationData: {}});
-    window.location.reload()
+    localStorage.removeItem('savedLocation');
+    window.location.reload();
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('savedLocation') !== null) {
+      var retrievedLocation = localStorage.getItem('savedLocation');
+      this.setLocation(retrievedLocation);
+    }
   }
 
   render() {
