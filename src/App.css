@@ -156,11 +156,10 @@ input:focus {
 }
 
 .city__name {
-  height: 5rem;
-  align-items: center;
-  text-align: center;
   align-content: center;
   margin-bottom: 0;
+  font-size: 5rem;
+  margin-top: 3.2rem;
 }
 
 .card_temp--lo {
