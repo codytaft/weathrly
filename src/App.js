@@ -27,7 +27,7 @@ class App extends Component {
       .then( (data) => {
         this.setState({
           locationData: getAllWeatherData(data),
-          dataLoaded: true
+          dataLoaded: true,
         })
       })
       .catch( () => {

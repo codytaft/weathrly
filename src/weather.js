@@ -1,4 +1,3 @@
-
 const getAllWeatherData = (data) => {
   return { 
     currentWeather: getCurrentWeatherData(data),
