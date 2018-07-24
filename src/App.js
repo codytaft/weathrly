@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './normalize.css';
 import './App.css';
 import Welcome from './Welcome.js';
+import Error from './Error';
 import Search from './Search.js';
 import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
@@ -16,7 +17,8 @@ class App extends Component {
     this.state = {
       locationData: {},
       searchedLocation: '',
-      dataLoaded: false
+      dataLoaded: false,
+      error: false,
     }
   }
 
@@ -29,8 +31,10 @@ class App extends Component {
           dataLoaded: true
         })
       })
-      .catch(error => {
-        throw new Error(error);
+      .catch( () => {
+        this.setState({
+          error: true,
+        })
       });
   }
 
@@ -74,6 +78,14 @@ class App extends Component {
           </div>
         </div>
       )
+    } else if (this.state.error === true) {
+      return (
+        <div className="Welcome-page">
+          <button className="Home-button-error-page" onClick={this.returnToWelcomePage}></button>
+          <Error />
+          <Search setLocation={this.setLocation} />
+        </div>
+      )
     }
     return (
       <div className="Welcome-page">
@@ -81,6 +93,11 @@ class App extends Component {
         <Search setLocation={this.setLocation} />
       </div>
     );
+    // if (this.state.error === true) {
+    //   return (
+    //     <Error />
+    //   )
+    // }
   }
 }
 
