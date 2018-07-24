@@ -29,7 +29,7 @@ class Search extends Component {
   render() {
     return(
         <form className="Search">
-          <input className="Search__input" list="suggested-cities" type="text" placeholder="ENTER CITY/STATE OR ZIP CODE" onChange={this.updateVal}/>
+          <input className="Search__input" list="suggested-cities" type="text" placeholder="ENTER CITY, STATE OR ZIP CODE" onChange={this.updateVal}/>
            <datalist id="suggested-cities">
             { this.state.suggestions.map( (suggestion, i) => {
                 return (
