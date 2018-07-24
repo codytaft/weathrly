@@ -81,7 +81,6 @@ class App extends Component {
     } else if (this.state.error === true) {
       return (
         <div className="Welcome-page">
-          <button className="Home-button-error-page" onClick={this.returnToWelcomePage}></button>
           <Error />
           <Search setLocation={this.setLocation} />
         </div>

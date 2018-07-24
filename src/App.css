@@ -135,22 +135,6 @@ input:focus {
   background-size: 85%;
 }
 
-.Home-button-error-page {
-  width: 7rem;
-  background: url(./icons/rainbow.svg);
-  background-size: 80%;
-  background-repeat: no-repeat;
-  /* background-position: left center; */
-  border: none;
-  height: 5rem
-}
-
-.Home-button-error-page:hover {
-  cursor: pointer;
-  background-size: 85%;
-}
-
-
 .Results__current-weather {
   display: flex;
   flex-wrap: wrap;
