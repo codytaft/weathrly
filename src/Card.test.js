@@ -16,5 +16,10 @@ describe('Card', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should have default')
-})
+  it('should have time and temp props', () => {
+    expect(wrapper.time).toEqual(this.props.currentData.day || (this.props.currentData.hour + '00'))
+    expect(wrapper.temp).toEqual(this.props.currentData.temp || this.rpops.currentData.high)
+  })
+
+
+});
