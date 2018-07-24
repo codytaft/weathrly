@@ -35,5 +35,6 @@ describe('Card', () => {
     expect(wrapper.instance().props.currentData.low).toEqual('59');
   })
 
+  
 
 });
