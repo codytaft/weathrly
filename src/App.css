@@ -163,6 +163,7 @@ input::-webkit-calendar-picker-indicator {
   align-content: center;
   margin-bottom: 0;
   font-size: 5rem;
+  font-weight: 300;
   margin-top: 3.2rem;
 }
 
