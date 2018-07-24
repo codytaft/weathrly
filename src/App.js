@@ -10,7 +10,6 @@ import CurrentWeather from './CurrentWeather.js';
 import HourlyForecast from './7HourForecast.js';
 import DailyForecast from './10DayForecast.js';
 
-
 class App extends Component {
   constructor() {
     super();
@@ -34,7 +33,8 @@ class App extends Component {
       .catch( () => {
         this.setState({
           error: true,
-        })
+        });
+        localStorage.removeItem('savedLocation');
       });
   }
 
@@ -52,6 +52,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.setState({ error: false });
     if (localStorage.getItem('savedLocation') !== null) {
       var retrievedLocation = localStorage.getItem('savedLocation');
       this.setLocation(retrievedLocation);
@@ -80,23 +81,18 @@ class App extends Component {
       )
     } else if (this.state.error === true) {
       return (
-        <div className="Welcome-page">
+        <div className="Main-page">
           <Error />
           <Search setLocation={this.setLocation} />
         </div>
       )
     }
     return (
-      <div className="Welcome-page">
+      <div className="Main-page">
         <Welcome />
         <Search setLocation={this.setLocation} />
       </div>
     );
-    // if (this.state.error === true) {
-    //   return (
-    //     <Error />
-    //   )
-    // }
   }
 }
 
