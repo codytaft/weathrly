@@ -5,12 +5,11 @@ import HourlyForecast from './HourlyForecast.js';
 import data from './WeatherData';
 import getAllWeatherData from './weather.js';
 
-describe('HourlyForecast', () => {
+describe('HourlyForecast component', () => {
   let wrapper;
-
   
   beforeEach(() => {
-    wrapper = shallow(<HourlyForecast locationData={ {} }/>)
+    wrapper = shallow(<HourlyForecast locationData={getAllWeatherData(data)}/>)
   })
 
   it('should exist', () => {
@@ -18,7 +17,7 @@ describe('HourlyForecast', () => {
     console.log('test')
   })
 
-  it.skip('should render an hour card', () => {
+  it('should render an hour card', () => {
     const currentData = getAllWeatherData(data)
     
     let wrapper = shallow(<HourlyForecast locationData={currentData}/>)
