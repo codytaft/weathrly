@@ -17,7 +17,7 @@ class Search extends Component {
 
   updateVal = (e) => {
     this.setState({ inputVal: e.target.value });
-    if (e.target.value.length > 1 && e.target.value.match(/[a-z]/i)) {
+    if (e.target.value.length > 1) {
       this.setState({ 
         suggestions: citiesTrie.suggest(e.target.value)
       });
@@ -27,7 +27,6 @@ class Search extends Component {
   }
 
   render() {
-    const setLocation = () => this.props.setLocation(this.state.inputVal)
     return(
         <form className="Search">
           <input className="Search__input" list="suggested-cities" type="text" placeholder="ENTER CITY, STATE OR ZIP CODE" onChange={this.updateVal}/>
@@ -46,7 +45,7 @@ class Search extends Component {
               })
             }
           </datalist>
-          <button className="Search__button" onClick={setLocation}></button> 
+          <button className="Search__button" onClick={() => this.props.setLocation(this.state.inputVal)}></button> 
         </form>
     )
   }

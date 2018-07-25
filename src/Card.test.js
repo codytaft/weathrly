@@ -7,10 +7,11 @@ import data from './WeatherData.js'
 
 describe('Card', () => {
   let wrapper;
+  let currentData;
 
   beforeEach(() => {
     localStorage.clear()
-    let currentData = {
+    currentData = {
                   hour: "14",
                   icon: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
                   temp: "83.2",
@@ -18,7 +19,7 @@ describe('Card', () => {
                   high: "87", 
                   low: "59",
     }
-    wrapper = shallow(<Card currentData={currentData} key={0}/>);
+    wrapper = mount(<Card currentData={currentData} key={0}/>);
     
   })
 
@@ -35,6 +36,46 @@ describe('Card', () => {
     expect(wrapper.instance().props.currentData.low).toEqual('59');
   })
 
-  
+  it('should pass the correct data to each hour card', () => {
+    currentData = {
+                  hour: "15",
+                  icon: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                  temp: "83.2",
+                  day: null,
+                  high: null, 
+                  low: null,
+    }
+    wrapper = mount(<Card currentData={currentData} key={0}/>);
+
+    const cardTime = wrapper.find('.card_time');
+    const cardTemp = wrapper.find('.card_temp');
+
+    expect(cardTime).toBeDefined();
+    expect(cardTime.text()).toEqual('15:00');
+
+    expect(cardTemp).toBeDefined();
+    expect(cardTemp.text()).toEqual('83.2  ');
+  })
+
+  it('should pass the correct data to each day card', () => {
+    currentData = {
+                  hour: null,
+                  icon: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                  temp: null,
+                  day: "Wednesday",
+                  high: "87", 
+                  low: "59",
+    }
+    wrapper = mount(<Card currentData={currentData} key={0}/>);
+
+    const cardTime = wrapper.find('.card_time');
+    const cardTemp = wrapper.find('.card_temp');
+
+    expect(cardTime).toBeDefined();
+    expect(cardTime.text()).toEqual('Wednesday');
+
+    expect(cardTemp).toBeDefined();
+    expect(cardTemp.text()).toEqual('87  59');
+  }) 
 
 });
