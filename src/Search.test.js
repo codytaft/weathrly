@@ -36,7 +36,6 @@ describe('Search', () => {
     const input = wrapper.find('input');
 
     input.simulate('change', { target: { value: 'b'}});
-
     expect(wrapper.state()).toEqual({inputVal: 'b', suggestions: []});
   })
 
@@ -44,11 +43,9 @@ describe('Search', () => {
     const input = wrapper.find('input');
 
     input.simulate('change', { target: { value: 'boulder, co'}});
-
     expect(wrapper.state()).toEqual({inputVal: 'boulder, co', suggestions: ['boulder, co']})
 
     input.simulate('change', { target: { value: 'bou'}});
-
     expect(wrapper.state()).toEqual({inputVal: 'bou', suggestions: ['boulder, co', 'bountiful, ut']})
   })
 
@@ -56,11 +53,9 @@ describe('Search', () => {
     const input = wrapper.find('input');
 
     input.simulate('change', { target: { value: '8'}});
-
     expect(wrapper.state()).toEqual({inputVal: '8', suggestions: []})
 
     input.simulate('change', { target: { value: 't'}});
-
     expect(wrapper.state()).toEqual({inputVal: 't', suggestions: []})
   })
 
@@ -81,15 +76,12 @@ describe('Search', () => {
 
   it('should render an option tag when there is a suggestion', () => {
     wrapper.setState({ suggestions: []});
-
     expect(wrapper.find('option').length).toEqual(0);
 
     wrapper.setState({ suggestions: ['Boulder, CO']});
-
     expect(wrapper.find('option').length).toEqual(1);
 
     wrapper.setState({ suggestions: ['boulder, co', 'bountiful, ut']});
-
     expect(wrapper.find('option').length).toEqual(2);
   })
  
