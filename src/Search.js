@@ -17,7 +17,7 @@ class Search extends Component {
 
   updateVal = (e) => {
     this.setState({ inputVal: e.target.value });
-    if (e.target.value.length > 1 && e.target.value.match(/[a-z]/i)) {
+    if (e.target.value.length > 1) {
       this.setState({ 
         suggestions: citiesTrie.suggest(e.target.value)
       });
