@@ -17,8 +17,8 @@ describe('HourlyForecast component', () => {
   })
 
   it('should render 7 hour cards', () => {
-    const currentData = getAllWeatherData(data)
-    let wrapper = mount(<HourlyForecast locationData={currentData}/>)
+    // const currentData = getAllWeatherData(data)
+    // let wrapper = mount(<HourlyForecast locationData={currentData}/>)
     const firstCard = wrapper.find('Card').first();
     
     expect(wrapper.find('Card').length).toEqual(7);
