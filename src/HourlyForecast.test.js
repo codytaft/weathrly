@@ -20,7 +20,7 @@ describe('HourlyForecast component', () => {
     const currentData = getAllWeatherData(data)
     let wrapper = mount(<HourlyForecast locationData={currentData}/>)
     const firstCard = wrapper.find('Card').first();
-    console.log(firstCard.props().currentData)
+    
     expect(wrapper.find('Card').length).toEqual(7);
     expect(firstCard.props().currentData.hour).toEqual('13')
     expect(firstCard.props().currentData.icon).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif')
