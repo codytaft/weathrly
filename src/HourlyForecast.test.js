@@ -9,18 +9,21 @@ describe('HourlyForecast component', () => {
   let wrapper;
   
   beforeEach(() => {
-    wrapper = shallow(<HourlyForecast locationData={getAllWeatherData(data)}/>)
+    wrapper = mount(<HourlyForecast locationData={getAllWeatherData(data)}/>)
   })
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should render an hour card', () => {
+  it('should render 7 hour cards', () => {
     const currentData = getAllWeatherData(data)
-    let wrapper = shallow(<HourlyForecast locationData={currentData}/>)
-    const firstCard = wrapper.find('Card').first()
-    const lastCard = wrapper.find('Card').last()
-    console.log(wrapper.find('Card').length)
+    let wrapper = mount(<HourlyForecast locationData={currentData}/>)
+    const firstCard = wrapper.find('Card').first();
+    
+    expect(wrapper.find('Card').length).toEqual(7);
+    expect(firstCard.props().currentData.hour).toEqual('13')
+    expect(firstCard.props().currentData.icon).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif')
+    expect(firstCard.props().currentData.temp).toEqual('49')
   })
 })
