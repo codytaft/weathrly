@@ -7,8 +7,8 @@ import Search from './Search.js';
 import getAllWeatherData from './weather.js';
 import apiKey from './apiKey.js';
 import CurrentWeather from './CurrentWeather.js';
-import HourlyForecast from './7HourForecast.js';
-import DailyForecast from './10DayForecast.js';
+import HourlyForecast from './HourlyForecast';
+import DailyForecast from './DailyForecast';
 
 class App extends Component {
   constructor() {

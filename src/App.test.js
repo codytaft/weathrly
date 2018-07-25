@@ -10,7 +10,7 @@ describe('App', () => {
   beforeEach(() => {
     localStorage.clear()
     wrapper = shallow(<App />);
-  })
+  });
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
