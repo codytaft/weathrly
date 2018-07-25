@@ -19,10 +19,11 @@ describe('HourlyForecast component', () => {
   it('should render 7 hour cards', () => {
     const currentData = getAllWeatherData(data)
     let wrapper = mount(<HourlyForecast locationData={currentData}/>)
-    
-
-    
-    expect(wrapper.find('Card').length).toEqual(7)
-    expect()
+    const firstCard = wrapper.find('Card').first();
+    console.log(firstCard.props().currentData)
+    expect(wrapper.find('Card').length).toEqual(7);
+    expect(firstCard.props().currentData.hour).toEqual('13')
+    expect(firstCard.props().currentData.icon).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif')
+    expect(firstCard.props().currentData.temp).toEqual('49')
   })
 })
