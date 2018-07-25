@@ -9,7 +9,8 @@ describe('Search', () => {
 
   beforeEach(() => {
     localStorage.clear()
-    wrapper = mount(<Search />);
+    let mockFn = jest.fn();
+    wrapper = mount(<Search setLocation={mockFn}/>);
   })
 
   it('renders without crashing', () => {
@@ -60,14 +61,12 @@ describe('Search', () => {
   })
 
   it('should invoke a function setLocation when button is clicked', () => {
-    wrapper.instance().setLocation = jest.fn();
-
     const searchButton = wrapper.find('button');
 
     searchButton.simulate('click');
 
-    expect(wrapper.instance().setLocation).toHaveBeenCalled();
-    expect(wrapper.instance().setLocation).toHaveBeenCalledTimes(1);
+    expect(wrapper.props().setLocation).toHaveBeenCalled();
+    expect(wrapper.props().setLocation).toHaveBeenCalledTimes(1);
   })
 
   it('setLocation should be passed the current input value', () => {
