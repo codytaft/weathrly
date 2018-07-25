@@ -8,7 +8,7 @@ class Card extends Component {
     return (
       <section className="weather__card">
         <p className="card_time">{time}</p>
-        <img className="card_icon" src={this.props.currentData.icon} alt="weather icon"/>
+        <img className="card_icon" src={require(`./icons/white/svg/${this.props.currentData.icon}.svg`)} alt="weather icon"/>
         <p className="card_temp">{temp}<span className="card_temp--lo">  {this.props.currentData.low}</span></p>
       </section>  
     )

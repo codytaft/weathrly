@@ -155,8 +155,8 @@ input::-webkit-calendar-picker-indicator {
 
 .Results__current-weather img {
   margin: auto 0 auto 1.5rem;
-  width: 50px;
-  height: 50px;
+  /* width: 4rem; */
+  height: 6rem;
 }
 
 .card__temp {
@@ -180,6 +180,8 @@ input::-webkit-calendar-picker-indicator {
 
 .card_icon {
   margin: 0;
+  width: 3rem;
+  height: 3rem;
 }
 
 .city__name {
@@ -228,7 +230,7 @@ input::-webkit-calendar-picker-indicator {
 
 .Results__current-weather--temp {
   margin: 0;
-  width: calc(100% - 50px - 1.8rem);
+  width: calc(100% - 50px - 6rem);
   text-align: right;
   font-family: 'Oswald', sans-serif;
   font-size: 5rem;
