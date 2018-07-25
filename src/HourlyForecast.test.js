@@ -14,13 +14,13 @@ describe('HourlyForecast component', () => {
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
-    console.log('test')
   })
 
   it('should render an hour card', () => {
     const currentData = getAllWeatherData(data)
-    
     let wrapper = shallow(<HourlyForecast locationData={currentData}/>)
-
+    const firstCard = wrapper.find('Card').first()
+    const lastCard = wrapper.find('Card').last()
+    console.log(wrapper.find('Card').length)
   })
 })
