@@ -159,7 +159,7 @@ input::-webkit-calendar-picker-indicator {
   height: 6rem;
 }
 
-.card__temp {
+.Results__current-weather--temp--hi {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
@@ -196,7 +196,7 @@ input::-webkit-calendar-picker-indicator {
   color: #98c3e0;
 }
 
-.card__temp--lo {
+.Results__current-weather--temp--lo {
   margin-left: .5rem;
   color: #98c3e0;
 }
