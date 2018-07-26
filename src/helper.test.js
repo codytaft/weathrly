@@ -1,7 +1,7 @@
-import getAllWeatherData from './weather';
+import getAllWeatherData from './helper';
 import data from './WeatherData';
 
-describe('weather', () => {
+describe('helper', () => {
 
   it('should exist', () => {
     expect(getAllWeatherData).toBeDefined();
