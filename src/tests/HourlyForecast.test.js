@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme';
-import HourlyForecast from './HourlyForecast.js';
+import HourlyForecast from '../HourlyForecast.js';
 
-import data from './WeatherData';
-import getAllWeatherData from './helper.js';
+import data from '../WeatherData';
+import getAllWeatherData from '../helper.js';
 
 describe('HourlyForecast component', () => {
   let wrapper;
