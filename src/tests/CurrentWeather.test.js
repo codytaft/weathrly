@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import CurrentWeather from './CurrentWeather.js';
-import data from './WeatherData.js';
-import getAllWeatherData from './helper.js';
+import CurrentWeather from '../CurrentWeather.js';
+import data from '../WeatherData.js';
+import getAllWeatherData from '../helper.js';
 
 describe('CurrentWeather', () => {
   let wrapper;

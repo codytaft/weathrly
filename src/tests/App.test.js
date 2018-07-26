@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 
-import App from './App';
-import data from './WeatherData';
-import getAllWeatherData from './helper.js';
+import App from '../App';
+import data from '../WeatherData';
+import getAllWeatherData from '../helper.js';
 
 describe('App component', () => {
   let wrapper;
