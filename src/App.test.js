@@ -34,6 +34,11 @@ describe('App component', () => {
   it('should render a welcome page with a welcome and search component', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
     expect(wrapper.find('Search').length).toEqual(1);
+
+    expect(wrapper.find('CurrentWeather').length).toEqual(0);
+    expect(wrapper.find('HourlyForecast').length).toEqual(0);
+    expect(wrapper.find('DailyForecast').length).toEqual(0);
+    expect(wrapper.find('Error').length).toEqual(0);
   });
 
   it('should render an error page with an error and search component if there is a catch error', () => {
@@ -41,6 +46,11 @@ describe('App component', () => {
 
     expect(wrapper.find('Error').length).toEqual(1);
     expect(wrapper.find('Search').length).toEqual(1);
+
+    expect(wrapper.find('Welcome').length).toEqual(0);
+    expect(wrapper.find('CurrentWeather').length).toEqual(0);
+    expect(wrapper.find('HourlyForecast').length).toEqual(0);
+    expect(wrapper.find('DailyForecast').length).toEqual(0);
   });
 
   it('should render a results page with current weather, hourly forecast, and daily forecast components', () => {
@@ -49,6 +59,10 @@ describe('App component', () => {
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
     expect(wrapper.find('HourlyForecast').length).toEqual(1);
     expect(wrapper.find('DailyForecast').length).toEqual(1);
+    expect(wrapper.find('Search').length).toEqual(1);
+
+    expect(wrapper.find('Error').length).toEqual(0);
+    expect(wrapper.find('Welcome').length).toEqual(0);
   });
 
   it('should update state with new location', () => {
@@ -61,13 +75,17 @@ describe('App component', () => {
     expect(wrapper.state().searchedLocation).toEqual('Denver, CO');
   });
 
-  it.skip('should have a function that fetches API when a new location is entered', () => {
-    const searchedLocation = 'Denver, CO';
-
-    // expect(wrapper.instance().fetchAPI).not.toHaveBeenCalled();
-    wrapper.instance().setLocation(searchedLocation);
-    // expect(wrapper.instance().fetchAPI).toHaveBeenCalled();
+  it('should have a function that fetches API when a new location is entered', () => {
     expect(typeof wrapper.instance().fetchAPI).toEqual('function');
+
+    const searchedLocation = 'Denver, CO';
+    const mockFn = jest.fn();
+
+    wrapper.instance().fetchAPI = mockFn;
+    expect(wrapper.instance().fetchAPI).not.toHaveBeenCalled();
+
+    wrapper.instance().setLocation(searchedLocation);
+    expect(wrapper.instance().fetchAPI).toHaveBeenCalled();
   });
 
   it('should save location to localStorage', () => {
