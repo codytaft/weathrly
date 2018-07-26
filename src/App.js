@@ -34,7 +34,7 @@ class App extends Component {
         this.setState({
           error: true,
         });
-        localStorage.removeItem('savedLocation');
+        localStorage.clear();
       });
   }
 
