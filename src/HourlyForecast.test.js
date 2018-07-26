@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import HourlyForecast from './HourlyForecast.js';
 
 import data from './WeatherData';
-import getAllWeatherData from './weather.js';
+import getAllWeatherData from './helper.js';
 
 describe('HourlyForecast component', () => {
   let wrapper;
@@ -17,8 +17,7 @@ describe('HourlyForecast component', () => {
   })
 
   it('should render 7 hour cards', () => {
-    // const currentData = getAllWeatherData(data)
-    // let wrapper = mount(<HourlyForecast locationData={currentData}/>)
+
     const firstCard = wrapper.find('Card').first();
     
     expect(wrapper.find('Card').length).toEqual(7);

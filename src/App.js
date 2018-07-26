@@ -4,7 +4,7 @@ import './App.css';
 import Welcome from './Welcome.js';
 import Error from './Error';
 import Search from './Search.js';
-import getAllWeatherData from './weather.js';
+import getAllWeatherData from './helper.js';
 import apiKey from './apiKey.js';
 import CurrentWeather from './CurrentWeather.js';
 import HourlyForecast from './HourlyForecast';
