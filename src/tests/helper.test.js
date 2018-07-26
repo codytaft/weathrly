@@ -1,5 +1,5 @@
-import getAllWeatherData from './helper';
-import data from './WeatherData';
+import getAllWeatherData from '../helper';
+import data from '../WeatherData';
 
 describe('helper', () => {
 

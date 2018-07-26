@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Error from './Error';
+import Error from '../Error';
 
 describe('Error', () => {
   let wrapper;
