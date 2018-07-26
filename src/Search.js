@@ -35,12 +35,7 @@ class Search extends Component {
                 return (
                   <option key={i}
                           value={suggestion}
-                          onClick={() => {
-                          citiesTrie.select(suggestion);
-                          this.setState({ inputVal: suggestion, 
-                                          suggestedCities: []
-                                        });
-                  }} />
+                          />
                 );
               })
             }
