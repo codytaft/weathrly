@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 
 import Card from './Card';
-import data from './WeatherData.js'
 
 describe('Card', () => {
   let wrapper;

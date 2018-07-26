@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Error = (props) => {
+const Error = () => {
   return(
     <div >
       <h1 className="error-msg">Uh Oh... Does your city exist?</h1>
