@@ -75,13 +75,17 @@ describe('App component', () => {
     expect(wrapper.state().searchedLocation).toEqual('Denver, CO');
   });
 
-  it.skip('should have a function that fetches API when a new location is entered', () => {
-    const searchedLocation = 'Denver, CO';
-
-    // expect(wrapper.instance().fetchAPI).not.toHaveBeenCalled();
-    wrapper.instance().setLocation(searchedLocation);
-    // expect(wrapper.instance().fetchAPI).toHaveBeenCalled();
+  it('should have a function that fetches API when a new location is entered', () => {
     expect(typeof wrapper.instance().fetchAPI).toEqual('function');
+
+    const searchedLocation = 'Denver, CO';
+    const mockFn = jest.fn();
+
+    wrapper.instance().fetchAPI = mockFn;
+    expect(wrapper.instance().fetchAPI).not.toHaveBeenCalled();
+
+    wrapper.instance().setLocation(searchedLocation);
+    expect(wrapper.instance().fetchAPI).toHaveBeenCalled();
   });
 
   it('should save location to localStorage', () => {
