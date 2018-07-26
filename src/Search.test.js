@@ -60,17 +60,16 @@ describe('Search', () => {
     expect(wrapper.state()).toEqual({inputVal: 't', suggestions: []})
   })
 
-  it('should invoke a function setLocation when button is clicked', () => {
+  it('should invoke a function setLocation when button is clicked and setLocation should be passed the current input value', () => {
     const searchButton = wrapper.find('button');
+    const input = wrapper.find('input');
 
+    input.simulate('change', { target: { value: 'Denver, CO'}});
     searchButton.simulate('click');
 
     expect(wrapper.props().setLocation).toHaveBeenCalled();
     expect(wrapper.props().setLocation).toHaveBeenCalledTimes(1);
-  })
-
-  it('setLocation should be passed the current input value', () => {
-
+    expect(wrapper.props().setLocation).toHaveBeenCalledWith('Denver, CO');
   })
 
   it('should render an option tag when there is a suggestion', () => {
