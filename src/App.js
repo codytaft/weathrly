@@ -53,7 +53,8 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({ error: false });
-    if (localStorage.getItem('savedLocation') !== undefined) {
+    console.log(localStorage.getItem('savedLocation'))
+    if (localStorage.getItem('savedLocation') !== null) {
       var retrievedLocation = localStorage.getItem('savedLocation');
       this.setLocation(retrievedLocation);
     }
