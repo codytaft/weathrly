@@ -34,7 +34,7 @@ class App extends Component {
         this.setState({
           error: true,
         });
-        localStorage.removeItem('savedLocation');
+        localStorage.clear();
       });
   }
 
@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   returnToWelcomePage = () => {
-    localStorage.removeItem('savedLocation');
+    localStorage.clear();
     window.location.reload();
   }
 
