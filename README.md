@@ -6,19 +6,19 @@ Weather forecast application using ReactJS with the Weather Underground API. Giv
 
 * Micro-Interaction Inspiration
 
- [![Colorful App Icons](https://cdn.dribbble.com/users/452635/screenshots/3824070/3.1.app_icon.png =100)](https://dribbble.com/shots/3824070-Unused-App-Icons-Collection-2)
+ [![Colorful App Icons](https://cdn.dribbble.com/users/452635/screenshots/3824070/3.1.app_icon.png =100x)](https://dribbble.com/shots/3824070-Unused-App-Icons-Collection-2)
  
  [![Pulsing Color Icon](https://cdn.dribbble.com/users/583436/screenshots/2726044/ring.gif =100)](https://dribbble.com/shots/2726044-Rainbow-Ring) 
 
 * Page Design Inspiration
 
- [![Single Color Design](https://lh3.googleusercontent.com/MaCfBQaTflHQ_WT1xq8PcosSsxP-8Qq4c3wD-_Y_aWjJiVZaueVsvwW0W0FLzOLN3XOKJk54IGk=w640-h400-e365 =100)](https://chrome.google.com/webstore/detail/currently/ojhmphdkpgbibohbnpbfiefkgieacjmh?hl=en)
+ [![Single Color Design](https://lh3.googleusercontent.com/MaCfBQaTflHQ_WT1xq8PcosSsxP-8Qq4c3wD-_Y_aWjJiVZaueVsvwW0W0FLzOLN3XOKJk54IGk=w640-h400-e365 =100x)](https://chrome.google.com/webstore/detail/currently/ojhmphdkpgbibohbnpbfiefkgieacjmh?hl=en)
  
- [![Single Color Background](https://cdn.dribbble.com/users/150724/screenshots/4594119/weather_app_small.png =100)](https://dribbble.com/shots/4594119-Weather-App)
+ [![Single Color Background](https://cdn.dribbble.com/users/150724/screenshots/4594119/weather_app_small.png =100x)](https://dribbble.com/shots/4594119-Weather-App)
 
 * Initial Wireframe
 
- ![Initial Wireframe](images/weathrly-wireframe.png =100)
+ ![Initial Wireframe](images/weathrly-wireframe.png =100x)
 
 ## Result
 
