@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   returnToWelcomePage = () => {
-    localStorage.removeItem('savedLocation');
+    localStorage.clear();
     window.location.reload();
   }
 
