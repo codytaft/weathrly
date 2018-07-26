@@ -25,9 +25,7 @@ Weather forecast application using ReactJS with the Weather Underground API. Giv
 
 * Page Design Inspiration
 
-  <a href="https://chrome.google.com/webstore/detail/currently/ojhmphdkpgbibohbnpbfiefkgieacjmh?hl=en"><img src="https://lh3.googleusercontent.com/MaCfBQaTflHQ_WT1xq8PcosSsxP-8Qq4c3wD-_Y_aWjJiVZaueVsvwW0W0FLzOLN3XOKJk54IGk=w640-h400-e365" width="500"></a>
-
-  <a href="https://dribbble.com/shots/4594119-Weather-App"><img src="https://cdn.dribbble.com/users/150724/screenshots/4594119/weather_app_small.png" width="500"></a>
+  <a href="https://chrome.google.com/webstore/detail/currently/ojhmphdkpgbibohbnpbfiefkgieacjmh?hl=en"><img src="https://lh3.googleusercontent.com/MaCfBQaTflHQ_WT1xq8PcosSsxP-8Qq4c3wD-_Y_aWjJiVZaueVsvwW0W0FLzOLN3XOKJk54IGk=w640-h400-e365" width="300"></a> <a href="https://dribbble.com/shots/4594119-Weather-App"><img src="https://cdn.dribbble.com/users/150724/screenshots/4594119/weather_app_small.png" width="300"></a>
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
