@@ -64,7 +64,7 @@ class App extends Component {
       return(
         <div className="Results-page">
           <header className="Home-search-head">
-            <button className="Home-button" onClick={this.returnToWelcomePage}></button>
+            <button className="Home-button" onClick={this.returnToWelcomePage} aria-label="home button"></button>
             <Search setLocation={this.setLocation}/>
           </header>
           <CurrentWeather locationData={this.state.locationData}/>
