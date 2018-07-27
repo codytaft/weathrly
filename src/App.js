@@ -69,6 +69,7 @@ class App extends Component {
             <button
               className="Home-button"
               onClick={this.returnToWelcomePage}
+              aria-label="home button"
             />
             <Search setLocation={this.setLocation} />
           </header>

@@ -26,38 +26,32 @@ class Search extends Component {
   };
 
   render() {
-    return (
-      <form className="Search">
-        <input
-          className="Search__input"
-          list="suggested-cities"
-          type="text"
-          placeholder="ENTER CITY, STATE OR ZIP CODE"
-          onChange={this.updateVal}
-        />
-        <datalist id="suggested-cities">
-          {this.state.suggestions.map((suggestion, i) => {
-            return (
-              <option
-                key={i}
-                value={suggestion}
-                onClick={() => {
-                  citiesTrie.select(suggestion);
-                  this.setState({
-                    inputVal: suggestion,
-                    suggestedCities: []
-                  });
-                }}
-              />
-            );
-          })}
-        </datalist>
-        <button
-          className="Search__button"
-          onClick={() => this.props.setLocation(this.state.inputVal)}
-        />
-      </form>
-    );
+    return(
+        <form className="Search">
+          <input 
+            className="Search__input" 
+            list="suggested-cities" 
+            type="text" 
+            placeholder="ENTER CITY, STATE OR ZIP CODE" 
+            onChange={this.updateVal} 
+            aria-label="input location"
+          />
+           <datalist id="suggested-cities">
+            { this.state.suggestions.map( (suggestion, i) => {
+                return (
+                  <option key={i}
+                          value={suggestion}
+                          />
+                );
+              })
+            }
+          </datalist>
+          <button 
+            className="Search__button" 
+            onClick={() => this.props.setLocation(this.state.inputVal)} 
+            aria-label="search button"></button> 
+        </form>
+    )
   }
 }
 
