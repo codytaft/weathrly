@@ -1,59 +1,61 @@
-import React, { Component } from 'react';
-import './normalize.css';
-import './App.css';
-import Welcome from './Welcome.js';
-import Error from './Error';
-import Search from './Search.js';
-import getAllWeatherData from './helper.js';
-import apiKey from './apiKey.js';
-import CurrentWeather from './CurrentWeather.js';
-import HourlyForecast from './HourlyForecast';
-import DailyForecast from './DailyForecast';
+import React, { Component } from "react";
+import "./normalize.css";
+import "./App.css";
+import Welcome from "./Welcome.js";
+import Error from "./Error";
+import Search from "./Search.js";
+import getAllWeatherData from "./helper.js";
+import apiKey from "./apiKey.js";
+import CurrentWeather from "./CurrentWeather.js";
+import HourlyForecast from "./HourlyForecast";
+import DailyForecast from "./DailyForecast";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       locationData: {},
-      searchedLocation: '',
+      searchedLocation: "",
       dataLoaded: false,
-      error: false,
-    }
+      error: false
+    };
   }
 
   fetchAPI(city, state) {
-    fetch(`http://api.wunderground.com/api/${apiKey}/conditions/hourly/forecast10day/q/${state}/${city}.json`)
-      .then( response => response.json())
-      .then( (data) => {
+    fetch(
+      `http://api.wunderground.com/api/${apiKey}/conditions/hourly/forecast10day/q/${state}/${city}.json`
+    )
+      .then(response => response.json())
+      .then(data => {
         this.setState({
           locationData: getAllWeatherData(data),
-          dataLoaded: true,
-        })
+          dataLoaded: true
+        });
       })
-      .catch( () => {
+      .catch(() => {
         this.setState({
-          error: true,
+          error: true
         });
         localStorage.clear();
       });
   }
 
-  setLocation = (location) => {
-    const [city, state] = location.split(', ');
-    let noSpaceCity = city.replace(/ /, '_')
+  setLocation = location => {
+    const [city, state] = location.split(", ");
+    let noSpaceCity = city.replace(/ /, "_");
     this.setState({ searchedLocation: location });
     this.fetchAPI(noSpaceCity, state);
-    localStorage.setItem('savedLocation', location);
-  }
+    localStorage.setItem("savedLocation", location);
+  };
 
   returnToWelcomePage = () => {
     localStorage.clear();
     window.location.reload();
-  }
+  };
 
   componentDidMount() {
     this.setState({ error: false });
-    const storedLocation = localStorage.getItem('savedLocation');
+    const storedLocation = localStorage.getItem("savedLocation");
     if (storedLocation) {
       this.setLocation(storedLocation);
     }
@@ -61,31 +63,37 @@ class App extends Component {
 
   render() {
     if (this.state.searchedLocation && this.state.dataLoaded) {
-      return(
+      return (
         <div className="Results-page">
           <header className="Home-search-head">
-            <button className="Home-button" onClick={this.returnToWelcomePage} aria-label="home button"></button>
-            <Search setLocation={this.setLocation}/>
+            <button
+              className="Home-button"
+              onClick={this.returnToWelcomePage}
+              aria-label="home button"
+            />
+            <Search setLocation={this.setLocation} />
           </header>
-          <CurrentWeather locationData={this.state.locationData}/>
+          <CurrentWeather locationData={this.state.locationData} />
           <div className="Hourly-cards-section">
-            <h3 className="city__name">{this.state.locationData.currentWeather.currentLocation}</h3>
+            <h3 className="city__name">
+              {this.state.locationData.currentWeather.currentLocation}
+            </h3>
             <div className="Hourly_cards">
-              <HourlyForecast locationData={this.state.locationData}/>
+              <HourlyForecast locationData={this.state.locationData} />
             </div>
           </div>
           <div className="Daily-cards">
-            <DailyForecast locationData={this.state.locationData}/>
+            <DailyForecast locationData={this.state.locationData} />
           </div>
         </div>
-      )
+      );
     } else if (this.state.error === true) {
       return (
         <div className="Main-page">
           <Error />
           <Search setLocation={this.setLocation} />
         </div>
-      )
+      );
     }
     return (
       <div className="Main-page">

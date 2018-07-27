@@ -1,5 +1,5 @@
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
 
@@ -9,7 +9,7 @@ class LocalStorage {
   }
 
   getItem(key) {
-    return this.store[key]
+    return this.store[key];
   }
 
   setItem(key, string) {
@@ -17,8 +17,8 @@ class LocalStorage {
   }
 
   clear() {
-    this.store = {}
+    this.store = {};
   }
 }
 
-global.localStorage = new LocalStorage;
+global.localStorage = new LocalStorage();
