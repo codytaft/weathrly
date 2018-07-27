@@ -279,7 +279,7 @@ input::-webkit-calendar-picker-indicator {
 @media only screen and (max-width: 1320px) {
   .Results__current-weather--temp {
     font-size: 4rem;
-  } 
+  }
 }
 
 @media only screen and (max-width: 1375px) {
@@ -331,9 +331,46 @@ input::-webkit-calendar-picker-indicator {
   .Results__current-weather--temp--hi {
     padding-left: 1.3rem;
   }
-
 }
-
+@media only screen and (max-width: 841px) {
+  .Results__current-weather--date {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 775px) {
+  .Search__input {
+    height: 2.5rem;
+    width: 20rem;
+    font-size: 1.5rem;
+  }
+  .Search__input::placeholder {
+    font-size: 1.5rem;
+    align-content: center;
+    align-self: center
+  }
+}
+@media only screen and (max-width: 736px) {
+  .Results__current-weather--temp {
+    font-size: 3.5rem;
+  }
+  .Results__current-weather--description {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 715px) {
+  .Results__current-weather--temp {
+    font-size: 3rem;
+    padding-top: 1rem;
+  }
+  .Results__current-weather--description {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 695px) {
+  .Results__current-weather--temp--hi {
+    padding: 0 4.5rem;
+  }
+}
 
 
 
