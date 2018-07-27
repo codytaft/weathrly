@@ -5,16 +5,16 @@ class Card extends Component {
     let time = this.props.currentData.day || this.props.currentData.hour + ":00";
     let temp = this.props.currentData.temp || this.props.currentData.high;
     return (
-      <section className="weather__card">
-        <p className="card_time">{time}</p>
+      <section className="Results__weather-card">
+        <p className="Results__weather-card--time">{time}</p>
         <img
-          className="card_icon"
+          className="Results__weather-card--icon"
           src={require(`./icons/white/svg/${this.props.currentData.icon}.svg`)}
           alt="weather icon"
         />
-        <p className="card_temp">
+        <p className="Results__weather-card--temp">
           {temp}
-          <span className="card_temp--lo"> {this.props.currentData.low}</span>
+          <span className="Results__weather-card--lo-temp"> {this.props.currentData.low}</span>
         </p>
       </section>
     );

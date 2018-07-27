@@ -18,9 +18,9 @@ class CurrentWeather extends Component {
             &#176;F
           </span>
         </p>
-        <p className="Results__current-weather--temp--hi">
+        <p className="Results__current-weather--hi-temp">
           {this.props.locationData.currentWeather.currentHi}
-          <span className="Results__current-weather--temp--lo">
+          <span className="Results__current-weather--lo-temp">
             {this.props.locationData.currentWeather.currentLo}
           </span>
         </p>

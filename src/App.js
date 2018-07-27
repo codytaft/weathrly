@@ -64,25 +64,25 @@ class App extends Component {
   render() {
     if (this.state.searchedLocation && this.state.dataLoaded) {
       return (
-        <div className="Results-page">
-          <header className="Home-search-head">
+        <div className="Results">
+          <header className="Results__header">
             <button
-              className="Home-button"
+              className="Results__header--home-button"
               onClick={this.returnToWelcomePage}
               aria-label="home button"
             />
             <Search setLocation={this.setLocation} />
           </header>
           <CurrentWeather locationData={this.state.locationData} />
-          <div className="Hourly-cards-section">
-            <h3 className="city__name">
+          <div className="Results__hourly--section">
+            <h3 className="Results__city-name">
               {this.state.locationData.currentWeather.currentLocation}
             </h3>
-            <div className="Hourly_cards">
+            <div className="Results__hourly">
               <HourlyForecast locationData={this.state.locationData} />
             </div>
           </div>
-          <div className="Daily-cards">
+          <div className="Results__daily">
             <DailyForecast locationData={this.state.locationData} />
           </div>
         </div>
