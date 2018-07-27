@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import Card from './Card.js';
+import Card from "./Card.js";
 
-const DailyForecast = (props) => {
-  return (
-      props.locationData.dailyWeather.map( (day, i) => {
-        return <Card currentData={day} key={i} />;
-      })
-  )
-}
+const DailyForecast = props => {
+  return props.locationData.dailyWeather.map((day, i) => {
+    return <Card currentData={day} key={i} />;
+  });
+};
 
 export default DailyForecast;
