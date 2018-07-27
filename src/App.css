@@ -83,6 +83,10 @@ input:focus {
   font-size: 2.5rem;
 }
 
+.Search__input:focus {
+  border-radius: 0;
+}
+
 input::-webkit-calendar-picker-indicator {
   display: none;
 }
@@ -266,7 +270,17 @@ input::-webkit-calendar-picker-indicator {
   text-align: right;
 }
 
+@media only screen and (max-width: 1375px) {
+  .Hourly-cards-section {
+    width: 69%;
+  }
+}
 
+@media only screen and (max-width: 1163px) {
+  .Hourly-cards-section {
+    width: 69%;
+  }
+}
 
 
 
