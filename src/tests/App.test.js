@@ -115,7 +115,7 @@ describe('App component', () => {
   it('should return to welcome page when home button is clicked', () => {
     wrapper.setState({ locationData: getAllWeatherData(data), searchedLocation: 'Denver, CO', dataLoaded: true })
 
-    const homeButton = wrapper.find('.Home-button');
+    const homeButton = wrapper.find('.Results__header--home-button');
 
     homeButton.simulate('click');
 
