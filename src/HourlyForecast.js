@@ -1,12 +1,10 @@
-import React from 'react';
-import Card from './Card.js';
+import React from "react";
+import Card from "./Card.js";
 
-const HourlyForecast = (props) => {
-  return (
-      props.locationData.hourlyWeather.map( (hour, i) => {
-        return <Card currentData={hour} key={i} />;
-      })
-  )
-}
+const HourlyForecast = props => {
+  return props.locationData.hourlyWeather.map((hour, i) => {
+    return <Card currentData={hour} key={i} />;
+  });
+};
 
 export default HourlyForecast;

@@ -1,28 +1,27 @@
-import React from 'react'
-import { shallow, mount } from 'enzyme';
-import HourlyForecast from '../HourlyForecast.js';
+import React from "react";
+import { shallow, mount } from "enzyme";
+import HourlyForecast from "../HourlyForecast.js";
 
-import data from '../WeatherData';
-import getAllWeatherData from '../helper.js';
+import data from "../WeatherData";
+import getAllWeatherData from "../helper.js";
 
-describe('HourlyForecast component', () => {
+describe("HourlyForecast component", () => {
   let wrapper;
-  
+
   beforeEach(() => {
-    wrapper = mount(<HourlyForecast locationData={getAllWeatherData(data)}/>)
-  })
+    wrapper = mount(<HourlyForecast locationData={getAllWeatherData(data)} />);
+  });
 
-  it('should exist', () => {
+  it("should exist", () => {
     expect(wrapper).toBeDefined();
-  })
+  });
 
-  it('should render 7 hour cards', () => {
+  it("should render 7 hour cards", () => {
+    const firstCard = wrapper.find("Card").first();
 
-    const firstCard = wrapper.find('Card').first();
-    
-    expect(wrapper.find('Card').length).toEqual(7);
-    expect(firstCard.props().currentData.hour).toEqual('13')
-    expect(firstCard.props().currentData.icon).toEqual('partlycloudy')
-    expect(firstCard.props().currentData.temp).toEqual('49')
-  })
-})
+    expect(wrapper.find("Card").length).toEqual(7);
+    expect(firstCard.props().currentData.hour).toEqual("13");
+    expect(firstCard.props().currentData.icon).toEqual("partlycloudy");
+    expect(firstCard.props().currentData.temp).toEqual("49");
+  });
+});

@@ -24,7 +24,7 @@ input:focus {
 
 .error-msg {
   margin: 0;
-  padding-top: 5rem;
+  padding-top: 30%;
   font-weight: 300;
 }
 
@@ -56,7 +56,7 @@ input:focus {
 
 .App-title {
   margin: 0;
-  padding-top: 10%;
+  padding-top: 30%;
   font-size: 3em;
   font-weight: 100;
   text-align: center;
@@ -126,11 +126,12 @@ input::-webkit-calendar-picker-indicator {
   mask: url(./icons/rainbow.svg) no-repeat 50% 50%;
   mask-size: 80%;
   border: none;
+  transition: all .4s;
 }
 
 .Home-button:hover {
   cursor: pointer;
-  mask-size: 85%;
+  transform: scale(1.2);
   animation: morphingLogo 3s linear infinite;
   background-color: rgb(239, 120, 255);
 }
@@ -158,7 +159,6 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .Results__current-weather img {
-  margin: auto 0 auto 1.5rem;
   /* width: 4rem; */
   height: 6rem;
 }
@@ -270,17 +270,70 @@ input::-webkit-calendar-picker-indicator {
   text-align: right;
 }
 
-@media only screen and (max-width: 1375px) {
-  .Hourly-cards-section {
-    width: 69%;
+@media only screen and (max-width: 1401px) {
+  .Results__current-weather--temp {
+    font-size: 4.5rem;
   }
 }
 
-@media only screen and (max-width: 1163px) {
+@media only screen and (max-width: 1320px) {
+  .Results__current-weather--temp {
+    font-size: 4rem;
+  } 
+}
+
+@media only screen and (max-width: 1375px) {
   .Hourly-cards-section {
     width: 69%;
+  } 
+}
+
+
+@media only screen and (max-width: 1163px) {
+  .Hourly-cards-section {
+    width: 68%;
   }
 }
+
+@media only screen and (max-width: 1010px) {
+  .Hourly-cards-section {
+    width: 100%;
+  }
+  .city__name {
+    text-align: center;
+  }
+  .Results__current-weather {
+    width: 60%;
+    margin: 2rem 10rem 0 10rem;
+
+  }
+  .Results__current-weather--description {
+    font-size: 2rem;
+    text-align: center;
+    margin: auto 1rem auto 1rem;
+  }
+  .Results__current-weather--today {
+    width: 51%;
+    padding-left: 1.3rem;
+  }
+  .Daily-cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .Hourly_cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .weather__card {
+    flex: 0 0 auto;
+    min-width: 200px;
+  }
+  .Results__current-weather--temp--hi {
+    padding-left: 1.3rem;
+  }
+
+}
+
 
 
 
