@@ -4,11 +4,11 @@ Weather forecast application using ReactJS with the Weather Underground API. Giv
 
 ## Result
 
-[![Weathrly App Welcome](images/welcome-page.gif)]
+![Weathrly App Welcome](images/welcome-page.gif)
 
-[![Weathrly App Main Page](images/main-page.gif)]
+![Weathrly App Main Page](images/main-page.gif)
 
-[![Weathrly App Responsive Design](images/responsive-design.gif)]
+![Weathrly App Responsive Design](images/responsive-design.gif)
 
 
 ## Design Inspiration
