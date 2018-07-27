@@ -15,14 +15,14 @@ describe('Error', () => {
   })
 
   it('should show header with error message', () => {
-    const header = wrapper.find('.error-msg');
+    const header = wrapper.find('.Error__msg');
 
     expect(header).toBeDefined();
     expect(header.text()).toEqual('Uh Oh... Does your city exist?')
   })
 
   it('should show smaller header with error hint', () => {
-    const header = wrapper.find('.error-hint');
+    const header = wrapper.find('.Error__msg-hint');
 
     expect(header).toBeDefined();
     expect(header.text()).toEqual('make sure to use City, State format')
