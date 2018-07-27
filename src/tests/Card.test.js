@@ -52,7 +52,7 @@ describe('Card', () => {
     expect(cardTime.text()).toEqual('15:00');
 
     expect(cardTemp).toBeDefined();
-    expect(cardTemp.text()).toEqual('83.2  ');
+    expect(cardTemp.text()).toEqual('83.2 ');
   })
 
   it('should pass the correct data to each day card', () => {
@@ -73,7 +73,7 @@ describe('Card', () => {
     expect(cardTime.text()).toEqual('Wednesday');
 
     expect(cardTemp).toBeDefined();
-    expect(cardTemp.text()).toEqual('87  59');
+    expect(cardTemp.text()).toEqual('87 59');
   }) 
 
 });

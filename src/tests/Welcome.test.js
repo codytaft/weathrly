@@ -16,7 +16,7 @@ describe('Welcome', () => {
   })
 
   it('should show header with app title', () => {
-    const header = wrapper.find('.App-title');
+    const header = wrapper.find('.Main-page__title');
 
     expect(header).toBeDefined();
     expect(header.text()).toEqual('WEATHERLY');
