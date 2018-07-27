@@ -43,22 +43,22 @@ input:focus {
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-/*Main-page__title*/
-.App-title {
+
+.Main-page__title {
   margin: 0;
   padding-top: 12rem;
   font-size: 3em;
   font-weight: 100;
   text-align: center;
 }
-/*Error__msg*/
-.error-msg {
+
+.Error__msg {
   margin: 0;
   padding-top: 11rem;
   font-weight: 300;
 }
-/*Error__msg-hint*/
-.error-hint {
+
+.Error__msg-hint {
   margin: 1rem 0;
   font-weight: 300;
 }
@@ -110,20 +110,19 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*Results page*/
-/*Results*/
-.Results-page {
+.Results {
   display: flex;
   flex-wrap: wrap;
   margin: 3rem;
 }
-/*Results__header*/
-.Home-search-head {
+
+.Results__header {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-/*Results__header--home-button*/
-.Home-button {
+
+.Results__header--home-button {
   width: 7rem;
   background-color: #f2f2f2;
   -webkit-mask: url(./icons/rainbow.svg) no-repeat 50% 50%;
@@ -132,8 +131,8 @@ input::-webkit-calendar-picker-indicator {
   border: none;
   transition: all .4s;
 }
-/*Results__header--home-button*/
-.Home-button:hover {
+
+.Results__header--home-button:hover {
   cursor: pointer;
   transform: scale(1.2);
   animation: rainbowIcon 3s linear infinite;
@@ -152,8 +151,8 @@ input::-webkit-calendar-picker-indicator {
   }
 }
 
-/*Results__city-name*/
-.city__name {
+
+.Results__city-name{
   align-content: center;
   margin: 3rem 0 0 0;
   font-size: 5rem;
@@ -174,14 +173,14 @@ input::-webkit-calendar-picker-indicator {
 .Results__current-weather img {
   height: 6rem;
 }
-/*Results__current-weather--hi-temp*/
-.Results__current-weather--temp--hi {
+
+.Results__current-weather--hi-temp {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
 }
-/*Results__current-weather--lo-temp*/
-.Results__current-weather--temp--lo {
+
+.Results__current-weather--lo-temp {
   margin-left: .5rem;
   color: #98c3e0;
 }
@@ -222,8 +221,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*Hourly and Daily Weather cards*/
-/*Results__weather-card*/
-.weather__card {
+.Results__weather-card {
   display: flex;
   margin-top: 1.5rem;
   text-align: center;
@@ -231,49 +229,44 @@ input::-webkit-calendar-picker-indicator {
   flex-direction: column;
   align-items: center;
 }
-/*Results__weather-card--temp*/
-.card_temp {
+
+.Results__weather-card--temp {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
   font-weight: 200;
 }
 
-/*Results__weather-card--time*/
-.card_time {
+.Results__weather-card--time {
   font-size: 2rem;
   text-align: center;
   margin: 0;
 }
-/*Results__weather-card--icon*/
-.card_icon {
+
+.Results__weather-card--icon {
   margin: .3rem 0;
   height: 3rem;
   width: 3rem;
 }
 
-/*Results__weather-card--lo-temp*/
-.card_temp--lo {
+.Results__weather-card--lo-temp {
   color: #98c3e0;
 }
-/*Results__hourly--section*/
-.Hourly-cards-section {
+
+.Results__hourly--section {
   width: 70%;
 }
 
-/*Results__hourly*/
-.Hourly_cards {
+.Results__hourly {
   display: flex;
   justify-content: space-between;
 }
-/*Results__daily*/
-.Daily-cards {
+
+.Results__daily {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-
-/*1175-1164??*/
 
 @media only screen and (max-width: 1401px) {
   .Results__current-weather--temp {
@@ -288,27 +281,27 @@ input::-webkit-calendar-picker-indicator {
 }
 
 @media only screen and (max-width: 1375px) {
-  .Hourly-cards-section {
+  .Results__hourly--section {
     width: 69%;
   } 
 }
 
 @media only screen and (max-width: 1163px) {
-  .Hourly-cards-section {
+  .Results__hourly--section {
     width: 68%;
   }
 }
 
 @media only screen and (max-width: 1025px) {
-  .error-msg {
+  .Error__msg {
     font-size: 1.5em;
   }
 
-  .Hourly-cards-section {
+  .Results__hourly--section {
     width: 100%;
   }
 
-  .city__name {
+  .Results__city-name{
     margin: 1rem 0;
     text-align: center;
   }
@@ -322,30 +315,30 @@ input::-webkit-calendar-picker-indicator {
     font-size: 2rem;
   }
 
-  .Daily-cards {
+  .Results__daily {
     flex-wrap: nowrap;
     overflow-x: auto;
     margin-bottom: 2rem;
   }
 
-  .Hourly_cards {
+  .Results__hourly {
     flex-wrap: nowrap;
     overflow-x: auto;
     margin-bottom: 2rem;
   }
 
-  .weather__card {
+  .Results__weather-card{
     flex: 0 0 auto;
     min-width: 150px;
   }
 }
 
 @media only screen and (max-width: 790px) {
-  .error-msg {
+  .Error__msg {
     font-size: 1.2em;
   }
 
-  .error-hint {
+  .Error__msg-hint {
     font-size: 1em;
   }
 
@@ -367,27 +360,27 @@ input::-webkit-calendar-picker-indicator {
 }
 
 @media only screen and (max-width: 635px) {
-  .App-title {
+  .Main-page__title {
     font-size: 2.3em;
   }
 
-  .Home-search-head {
+  .Results__header {
     display: block;
   }
 
-  .Home-button {
+  .Results__header--home-button {
     height: 7rem;
     width: 10rem;
     margin-left: calc(50% - 5rem);
   }
 
-  .Results-page {
+  .Results {
     margin: 0;
   }
 }
 
 @media only screen and (max-width: 545px) {
-  .App-title {
+  .Main-page__title {
     font-size: 2em;
   }
 
@@ -397,7 +390,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 @media only screen and (max-width: 415px) {
-  .App-title {
+  .Main-page__title {
     font-size: 1.6em;
   }
 
