@@ -1,7 +1,7 @@
 body {
+  color: #f2f2f2;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 200;
-  color: #f2f2f2;
 }
 
 button:focus, 
@@ -9,9 +9,10 @@ input:focus {
     outline: none;
 }
 
+/*Welcome and Error pages*/
 .Main-page {
-  width: 100%;
   height: 100vh;
+  width: 100%;
   margin: 0;
   text-align: center;
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
@@ -20,17 +21,6 @@ input:focus {
   -z-animation: rainbow 18s ease infinite;
   -o-animation: rainbow 18s ease infinite;
   animation: rainbow 18s ease infinite;
-}
-
-.error-msg {
-  margin: 0;
-  padding-top: 30%;
-  font-weight: 300;
-}
-
-.error-hint {
-  margin: 1rem 0;
-  font-weight: 300;
 }
 
 @-webkit-keyframes rainbow {
@@ -53,15 +43,27 @@ input:focus {
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-
+/*Main-page__title*/
 .App-title {
   margin: 0;
-  padding-top: 30%;
+  padding-top: 12rem;
   font-size: 3em;
   font-weight: 100;
   text-align: center;
 }
+/*Error__msg*/
+.error-msg {
+  margin: 0;
+  padding-top: 11rem;
+  font-weight: 300;
+}
+/*Error__msg-hint*/
+.error-hint {
+  margin: 1rem 0;
+  font-weight: 300;
+}
 
+/*Search Bar for all pages*/
 .Search {
   display: flex;
   justify-content: center;
@@ -71,10 +73,10 @@ input:focus {
 .Search__input {
   height: 3.5rem;
   width: 30rem;
-  opacity: .8;
+  padding-left: .5rem;
   border: none;
   border-radius: 8px;
-  padding-left: .5rem;
+  opacity: .8;
   font-size: 2.5rem;
 }
 
@@ -87,6 +89,7 @@ input:focus {
   border-radius: 0;
 }
 
+/*Removes built-in arrow from input due to datalist tag*/
 input::-webkit-calendar-picker-indicator {
   display: none;
 }
@@ -94,49 +97,50 @@ input::-webkit-calendar-picker-indicator {
 .Search__button {
   width: 3.5rem;
   height: 3.5rem;
-  background: url(./icons/search.svg);
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
   margin-left: .5rem;
+  background: url(./icons/search.svg) no-repeat center;
+  background-size: 80%;
+  border: none;
+  transition: all .4s;
 }
 
 .Search__button:hover {
   cursor: pointer;
-  background-size: 85%;
+  transform: scale(1.2)
 }
 
+/*Results page*/
+/*Results*/
 .Results-page {
   display: flex;
   flex-wrap: wrap;
   margin: 3rem;
 }
-
+/*Results__header*/
 .Home-search-head {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-
+/*Results__header--home-button*/
 .Home-button {
   width: 7rem;
   background-color: #f2f2f2;
-  -webkit-mask:  url(./icons/rainbow.svg) no-repeat 50% 50%;
+  -webkit-mask: url(./icons/rainbow.svg) no-repeat 50% 50%;
   mask: url(./icons/rainbow.svg) no-repeat 50% 50%;
   mask-size: 80%;
   border: none;
   transition: all .4s;
 }
-
+/*Results__header--home-button*/
 .Home-button:hover {
   cursor: pointer;
   transform: scale(1.2);
-  animation: morphingLogo 3s linear infinite;
+  animation: rainbowIcon 3s linear infinite;
   background-color: rgb(239, 120, 255);
 }
 
-@keyframes morphingLogo {
+@keyframes rainbowIcon {
   0% {
     filter: hue-rotate(-90deg);
   }
@@ -148,96 +152,43 @@ input::-webkit-calendar-picker-indicator {
   }
 }
 
+/*Results__city-name*/
+.city__name {
+  align-content: center;
+  margin: 3rem 0 0 0;
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+/*Current Weather*/
 .Results__current-weather {
   display: flex;
   flex-wrap: wrap;
   width: 25%;
-  margin: 2rem 2rem 0 0;
+  margin: 3rem 2rem 0 0;
   padding: 1rem;
   background-color: #1980c4;
   border-radius: 25px;
 }
 
 .Results__current-weather img {
-  /* width: 4rem; */
   height: 6rem;
 }
-
+/*Results__current-weather--hi-temp*/
 .Results__current-weather--temp--hi {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
 }
-
-.card_temp {
-  font-size: 2rem;
-  margin: 0;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-}
-
-.card_time {
-  font-size: 2rem;
-  text-align: center;
-  margin: 0;
-}
-
-.card_icon {
-  margin: 0;
-  width: 3rem;
-  height: 3rem;
-}
-
-.city__name {
-  align-content: center;
-  margin-bottom: 0;
-  font-size: 5rem;
-  font-weight: 300;
-  margin-top: 3.2rem;
-}
-
-.card_temp--lo {
-  color: #98c3e0;
-}
-
+/*Results__current-weather--lo-temp*/
 .Results__current-weather--temp--lo {
   margin-left: .5rem;
   color: #98c3e0;
 }
 
-.Hourly-cards-section {
-  /* margin-top: 5rem; */
-  width: 70%;
-}
-
-.Hourly_cards {
-  display: flex;
-  justify-content: space-between;
-}
-
-.Daily-cards {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-
-}
-
-.weather__card {
-  display: flex;
-  margin-top: 1.5rem;
-  text-align: center;
-  height: 9rem;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card__time {
-  margin: 0
-}
-
 .Results__current-weather--temp {
   margin: 0;
-  width: calc(100% - 50px - 4.4rem);
+  width: calc(100% - 6rem);
   text-align: right;
   font-family: 'Oswald', sans-serif;
   font-size: 5rem;
@@ -270,6 +221,60 @@ input::-webkit-calendar-picker-indicator {
   text-align: right;
 }
 
+/*Hourly and Daily Weather cards*/
+/*Results__weather-card*/
+.weather__card {
+  display: flex;
+  margin-top: 1.5rem;
+  text-align: center;
+  height: 9rem;
+  flex-direction: column;
+  align-items: center;
+}
+/*Results__weather-card--temp*/
+.card_temp {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+/*Results__weather-card--time*/
+.card_time {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+/*Results__weather-card--icon*/
+.card_icon {
+  margin: .3rem 0;
+  height: 3rem;
+  width: 3rem;
+}
+
+/*Results__weather-card--lo-temp*/
+.card_temp--lo {
+  color: #98c3e0;
+}
+/*Results__hourly--section*/
+.Hourly-cards-section {
+  width: 70%;
+}
+
+/*Results__hourly*/
+.Hourly_cards {
+  display: flex;
+  justify-content: space-between;
+}
+/*Results__daily*/
+.Daily-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/*1175-1164??*/
+
 @media only screen and (max-width: 1401px) {
   .Results__current-weather--temp {
     font-size: 4.5rem;
@@ -288,101 +293,123 @@ input::-webkit-calendar-picker-indicator {
   } 
 }
 
-
 @media only screen and (max-width: 1163px) {
   .Hourly-cards-section {
     width: 68%;
   }
 }
 
-@media only screen and (max-width: 1010px) {
+@media only screen and (max-width: 1025px) {
+  .error-msg {
+    font-size: 1.5em;
+  }
+
   .Hourly-cards-section {
     width: 100%;
   }
+
   .city__name {
+    margin: 1rem 0;
     text-align: center;
   }
+
   .Results__current-weather {
     width: 60%;
-    margin: 2rem 10rem 0 10rem;
-
+    margin: 2rem auto 0 auto;
   }
+
   .Results__current-weather--description {
     font-size: 2rem;
-    text-align: center;
-    margin: auto 1rem auto 1rem;
   }
-  .Results__current-weather--today {
-    width: 51%;
-    padding-left: 1.3rem;
-  }
+
   .Daily-cards {
     flex-wrap: nowrap;
     overflow-x: auto;
+    margin-bottom: 2rem;
   }
+
   .Hourly_cards {
     flex-wrap: nowrap;
     overflow-x: auto;
+    margin-bottom: 2rem;
   }
+
   .weather__card {
     flex: 0 0 auto;
-    min-width: 200px;
-  }
-  .Results__current-weather--temp--hi {
-    padding-left: 1.3rem;
+    min-width: 150px;
   }
 }
-@media only screen and (max-width: 841px) {
-  .Results__current-weather--date {
-    font-size: 1.7rem;
+
+@media only screen and (max-width: 790px) {
+  .error-msg {
+    font-size: 1.2em;
   }
-}
-@media only screen and (max-width: 775px) {
+
+  .error-hint {
+    font-size: 1em;
+  }
+
   .Search__input {
     height: 2.5rem;
     width: 20rem;
     font-size: 1.5rem;
   }
+
   .Search__input::placeholder {
-    font-size: 1.5rem;
     align-content: center;
-    align-self: center
+    align-self: center;
+    font-size: 1.5rem;
+  }
+
+  .Results__current-weather {
+    min-width: 80%;
   }
 }
-@media only screen and (max-width: 736px) {
-  .Results__current-weather--temp {
-    font-size: 3.5rem;
+
+@media only screen and (max-width: 635px) {
+  .App-title {
+    font-size: 2.3em;
   }
-  .Results__current-weather--description {
-    font-size: 1.7rem;
+
+  .Home-search-head {
+    display: block;
+  }
+
+  .Home-button {
+    height: 7rem;
+    width: 10rem;
+    margin-left: calc(50% - 5rem);
+  }
+
+  .Results-page {
+    margin: 0;
   }
 }
-@media only screen and (max-width: 715px) {
-  .Results__current-weather--temp {
-    font-size: 3rem;
-    padding-top: 1rem;
+
+@media only screen and (max-width: 545px) {
+  .App-title {
+    font-size: 2em;
   }
-  .Results__current-weather--description {
+
+  .Results__current-weather {
+    min-width: 90%
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .App-title {
+    font-size: 1.6em;
+  }
+
+  .Search {
+    margin: 0 .5rem;
+  }
+
+  .Search__input::placeholder {
     font-size: 1.3rem;
   }
-}
-@media only screen and (max-width: 695px) {
-  .Results__current-weather--temp--hi {
-    padding: 0 4.5rem;
+
+  .Results__current-weather {
+    min-width: 85%
   }
 }
-
-
-
-
-
-/*
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
