@@ -21,8 +21,8 @@ describe('CurrentWeather', () => {
   it('should render icon, temp, temp-hi, temp-lo, today, and date', () => {
     const icon = wrapper.find('.Results__current-weather--icon');
     const temp = wrapper.find('.Results__current-weather--temp');
-    const tempLo = wrapper.find('.Results__current-weather--temp--lo');
-    const tempHi = wrapper.find('.Results__current-weather--temp--hi');
+    const tempLo = wrapper.find('.Results__current-weather--lo-temp');
+    const tempHi = wrapper.find('.Results__current-weather--hi-temp');
     const today = wrapper.find('.Results__current-weather--today');
     const date = wrapper.find('.Results__current-weather--date');
 

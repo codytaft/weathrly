@@ -45,8 +45,8 @@ describe('Card', () => {
     }
     wrapper = mount(<Card currentData={currentData} key={0}/>);
 
-    const cardTime = wrapper.find('.card_time');
-    const cardTemp = wrapper.find('.card_temp');
+    const cardTime = wrapper.find('.Results__weather-card--time');
+    const cardTemp = wrapper.find('.Results__weather-card--temp');
 
     expect(cardTime).toBeDefined();
     expect(cardTime.text()).toEqual('15:00');
@@ -66,8 +66,8 @@ describe('Card', () => {
     }
     wrapper = mount(<Card currentData={currentData} key={0}/>);
 
-    const cardTime = wrapper.find('.card_time');
-    const cardTemp = wrapper.find('.card_temp');
+    const cardTime = wrapper.find('.Results__weather-card--time');
+    const cardTemp = wrapper.find('.Results__weather-card--temp');
 
     expect(cardTime).toBeDefined();
     expect(cardTime.text()).toEqual('Wednesday');
